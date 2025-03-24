@@ -16,6 +16,10 @@ export default {
       ringOffsetColor: {
         primary: 'var(--aw-color-primary)',
       },
+      boxShadowColor: {
+        primary: 'var(--aw-color-primary)',
+        secondary: 'var(--aw-color-secondary)',
+      },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],

@@ -27,7 +27,12 @@
   }
 
   .btn-primary {
-    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary shadow-md shadow-primary/20 hover:shadow-secondary/20;
+    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary shadow-md;
+    --tw-shadow-color: rgb(var(--aw-color-primary-rgb) / 0.2);
+  }
+
+  .btn-primary:hover {
+    --tw-shadow-color: rgb(var(--aw-color-secondary-rgb) / 0.2);
   }
 
   .btn-secondary {
