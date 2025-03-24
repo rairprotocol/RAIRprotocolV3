@@ -20,16 +20,21 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg || (isDark ? null : 
+  `<div class="absolute inset-0 bg-purple-50 dark:bg-slate-900 pointer-events-none">
+    <div class="absolute inset-0 bg-[url('/pattern-tile.svg')] bg-repeat bg-contain opacity-5"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent to-white dark:to-slate-900"></div>
+  </div>`)}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   <ItemGrid
     items={items}
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
-      container: '',
-      title: 'md:text-[1.3rem]',
-      icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
+      container: 'gap-8',
+      panel: 'hover:shadow-lg hover:shadow-purple-300/30 dark:hover:shadow-purple-800/30 transition duration-300',
+      title: 'md:text-[1.3rem] font-semibold',
+      icon: 'text-white bg-primary hover:bg-secondary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0 transition duration-300',
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />
