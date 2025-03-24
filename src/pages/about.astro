@@ -7,7 +7,7 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About RAIR Protocol',
 };
 ---
 
@@ -18,58 +18,56 @@ const metadata = {
     tagline="About us"
     image={{
       src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      alt: 'RAIR Protocol Team',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      Pioneering the future of <br />
+      <span class="text-accent dark:text-white highlight">Open-source Web3 Deployment</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      RAIRTECH is pioneering the future of open-source Web3 deployment. With the creation of RAIR Protocol, enterprises can now access a truly open deployment layer, eliminating API risks and fulfilling the transparent promise of Web3. RAIRTECH supports the RAIR Protocol ecosystem through a comprehensive suite of managed services, ensuring seamless and secure integration for your business.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="RAIR Protocol by the numbers"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Integration Partners', amount: '40+' },
+      { title: 'Supported Blockchains', amount: '7+' },
+      { title: 'Enterprise Deployments', amount: '25+' },
+      { title: 'Developer Team', amount: '15+' },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="Our Philosophy"
+    subtitle="We believe in Self-Sovereign Infrastructure. The dApp layer of web3 needs to be just as resilient as underlying blockchains that power them."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'Enterprise Trust',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+          'For enterprises to truly scale into Web3, they must first trust the underlying architecture.',
+        icon: 'tabler:shield-lock',
       },
       {
-        title: 'Interior Design',
+        title: 'Beyond SaaS',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Blackbox SaaS models for too long have hampered the development of enterprise grade Web3 deployments.',
+        icon: 'tabler:box',
       },
       {
-        title: 'Photography',
+        title: 'Open Source Ecosystem',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          'Only a true open source deployment ecosystem can unlock the enterprise adoption our industry needs to scale to the next billion users.',
+        icon: 'tabler:users',
       },
     ]}
   />
@@ -81,68 +79,68 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
+        title: 'Deployment Layer',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+          'RAIRTECH provides oversight and support for the containerization of RAIR Protocol infrastructure to any cloud environment.',
+        icon: 'tabler:cloud',
       },
       {
-        title: 'Blog',
+        title: 'Fully Auditable',
         description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
+          'Fully auditable source code including a fully open source backend (RAIR-NODE). Create your own API endpoints on your own infrastructure.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Business',
+        title: 'EVM-based Workflows',
         description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
+          'Leading EVM-based workflows with easy onboarding for email and social login through advanced AA.',
+        icon: 'tabler:brand-ethereum',
       },
       {
-        title: 'Branding',
+        title: 'Managed SaaS',
         description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
+          'Your enterprise demands reliability and uptime. Combining our network of open source development with proven cloud engineering.',
+        icon: 'tabler:server',
       },
       {
-        title: 'Medical',
+        title: 'Scalable Deployments',
         description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
+          'Scalable K8 deployments managed by experts and optimized for GKE and Akash Network environments.',
+        icon: 'tabler:chart-arrows',
       },
       {
-        title: 'Fashion Design',
+        title: 'Risk Mitigation',
         description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+          'Mitigate cloud risk by running open source on your own infrastructure, eliminating vendor lock-in and API risks.',
+        icon: 'tabler:shield-check',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      alt: 'Web3 Infrastructure',
     }}
   />
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="Our Values"
+    subtitle="We believe in the power of open-source technology to transform the Web3 landscape and enable true decentralization for enterprise solutions."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Transparency',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'We are committed to full transparency in our codebase, operations, and business practices. All of our core technologies are open-source and auditable.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Innovation',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'We continuously push the boundaries of what's possible in Web3 by developing cutting-edge solutions that address real enterprise challenges.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Interoperability',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Our protocols and tools are designed to work seamlessly with existing systems and across various blockchains, ensuring flexible and adaptable implementations.',
       },
     ]}
   />
@@ -150,30 +148,30 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="Our Achievements"
+    subtitle="RAIR Protocol has become a leading force in enterprise Web3 deployment, with significant milestones in our journey."
     isReversed={true}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      text: 'Learn more',
+      href: '/services',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'Enterprise Partnerships',
+        description: 'Established partnerships with industry giants to bring Web3 infrastructure to enterprise-scale businesses.',
+        icon: 'tabler:handshake',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Technical Innovations',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+          'Pioneered containerization of Web3 infrastructure through Docker-based workflows that are enterprise-ready.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Decentralized Solutions',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+          'Developed truly decentralized deployment solutions that eliminate API risks and vendor lock-in concerns.',
+        icon: 'tabler:world',
       },
     ]}
   />
@@ -181,25 +179,71 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
+    title="Our Executive Team"
+    tagline="Leadership"
+    columns={3}
+    items={[
+      {
+        title: 'Ed Prado',
+        description: 'Chief Executive Officer',
+      },
+      {
+        title: 'Garrett Minks',
+        description: 'Chief Technical Officer',
+      },
+      {
+        title: 'Martin Casado',
+        description: 'Chief Design Officer',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Our Advisors"
+    tagline="Strategic Leadership"
     columns={4}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'Michael Terpin',
+        description: 'Strategic Advisor + Investor',
+        icon: 'tabler:brand-linkedin',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'Julia Yan',
+        description: 'Strategic Advisor',
+        icon: 'tabler:brand-linkedin',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
+        title: 'David Jensen',
+        description: 'Strategic Advisor + Investor',
+        icon: 'tabler:brand-linkedin',
       },
       {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'Matt Neco',
+        description: 'Strategic Advisor + Investor',
+        icon: 'tabler:brand-linkedin',
+      },
+      {
+        title: 'Richard Titus',
+        description: 'Strategic Advisor',
+        icon: 'tabler:brand-linkedin',
+      },
+      {
+        title: 'Bill Rusitzky',
+        description: 'Strategic Advisor',
+        icon: 'tabler:brand-linkedin',
+      },
+      {
+        title: 'Dev Sarkar',
+        description: 'Strategic Advisor',
+        icon: 'tabler:brand-linkedin',
+      },
+      {
+        title: 'Mosh Suzuki',
+        description: 'Strategic Advisor',
+        icon: 'tabler:brand-linkedin',
       },
     ]}
   />
@@ -207,21 +251,21 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Technical Support"
-    tagline="Contact us"
+    title="Contact Us"
+    tagline="Get in Touch"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
+        title: 'Enterprise Inquiries',
         description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+          'To inquire about enterprise deployments, please contact our team directly. We release new integrations monthly.',
+        icon: 'tabler:building',
       },
       {
-        title: 'Call us',
+        title: 'GitHub Contributions',
         description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+          'If you would like a specific integration for a new blockchain or infrastructure provider, please create an issue directly on the RAIR Protocol GitHub.',
+        icon: 'tabler:brand-github',
       },
     ]}
   />
