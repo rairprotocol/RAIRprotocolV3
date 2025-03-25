@@ -1,5 +1,5 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import LandingLayout from '~/layouts/LandingLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -18,7 +18,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<LandingLayout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -395,4 +395,4 @@ const metadata = {
       Apply for Association membership today<br class="hidden md:inline" />Get access to the full codebase and network rewards when launched
     </Fragment>
   </CallToAction>
-</Layout>
+</LandingLayout>
