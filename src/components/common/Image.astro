@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 import { findImage } from '~/utils/images';
+import { isNetlify, toGitHubRawUrl } from '~/utils/image-github-urls';
 import {
   getImagesOptimized,
   astroAssetsOptimizer,
@@ -35,6 +36,11 @@ if (!props.loading) {
 
 if (!props.decoding) {
   props.decoding = 'async';
+}
+
+// Handle image paths on Netlify
+if (isNetlify() && typeof props.src === 'string' && props.src.startsWith('~/assets/')) {
+  props.src = toGitHubRawUrl(props.src);
 }
 
 const _image = await findImage(props.src);

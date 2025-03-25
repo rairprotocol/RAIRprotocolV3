@@ -40,8 +40,16 @@ export const findImage = async (
     return imagePath;
   }
 
+  // First try the import.meta.glob approach
   const images = await fetchLocalImages();
   const key = imagePath.replace('~/', '/src/');
+
+  // If we're in a production environment on Netlify, use GitHub raw URLs
+  if (import.meta.env.PROD && typeof window !== 'undefined' && window.location.hostname.includes('netlify')) {
+    // Transform the path to a GitHub raw URL
+    const githubPath = imagePath.replace('~/', '');
+    return `https://raw.githubusercontent.com/RAIReth/RAIRprotocolV2/main/src/${githubPath}`;
+  }
 
   return images && typeof images[key] === 'function'
     ? ((await images[key]()) as { default: ImageMetadata })['default']

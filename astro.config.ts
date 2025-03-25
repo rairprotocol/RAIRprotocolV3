@@ -79,5 +79,8 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
+    define: {
+      'import.meta.env.GITHUB_IMAGES': JSON.stringify(process.env.GITHUB_IMAGES || false),
+    },
   },
 });
