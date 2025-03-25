@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import TriangleHexVisualizer from '~/components/common/TriangleHexVisualizer.astro';
 
 const metadata = {
   title: 'RAIR Protocol — Open-source Web3 deployment layer for enterprise',
@@ -32,7 +33,6 @@ const metadata = {
       },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/rairprotocol-maingraphic-v2.png', alt: 'RAIR Protocol Hero Image' }}
   >
     <Fragment slot="title">
       Your <span class="hidden xl:inline">Web3 Deployment</span>
@@ -44,6 +44,19 @@ const metadata = {
         <span class="font-semibold">RAIR Protocol</span> is a truly open deployment layer for Web3, eliminating API risks and fulfilling the transparent promise of decentralization.</span>
       <span class="block mb-1 sm:hidden font-bold text-blue-600">RAIR Protocol: Truly Open.</span>
       Empowering enterprises with open-source Web3 deployment for seamless and secure integration with your business.
+    </Fragment>
+
+    <Fragment slot="image">
+      <TriangleHexVisualizer 
+        width={1024} 
+        height={576} 
+        loading="eager"
+        primaryColor="#4338ca"
+        secondaryColor="#3b82f6"
+        tertiaryColor="#06b6d4"
+        backgroundColor="#030b36"
+        density={20}
+      />
     </Fragment>
   </Hero>
 
@@ -121,11 +134,19 @@ const metadata = {
           'Only a true open source deployment ecosystem can unlock the enterprise adoption our industry needs to scale to the next billion users.',
       },
     ]}
-    image={{
-      src: '~/assets/images/RAIR-policy-01.webp',
-      alt: 'Web3 Infrastructure Image',
-    }}
   >
+    <Fragment slot="image">
+      <TriangleHexVisualizer 
+        width={1024} 
+        height={576} 
+        backgroundColor="#030b36"
+        primaryColor="#4338ca"
+        secondaryColor="#3b82f6"
+        tertiaryColor="#38bdf8"
+        density={15}
+      />
+    </Fragment>
+
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on Blockchain Foundations</h3>
       Gain a competitive advantage with truly open source Web3 infrastructure
@@ -161,11 +182,19 @@ const metadata = {
           'Connect with 40+ direct integration partners across Web2 and Web3, including cloud providers, storage solutions, and more.',
       },
     ]}
-    image={{
-      src: '~/assets/images/RAIR-Licensing-01.webp',
-      alt: 'Web3 Deployment Image',
-    }}
   >
+    <Fragment slot="image">
+      <TriangleHexVisualizer 
+        width={1024} 
+        height={576} 
+        backgroundColor="#030b36"
+        primaryColor="#3b82f6"
+        secondaryColor="#6366f1"
+        tertiaryColor="#06b6d4"
+        density={18}
+      />
+    </Fragment>
+
     <Fragment slot="content">Ensure your Web3 presence has a foundation you can trust.</Fragment>
 
     <Fragment slot="bg">
@@ -199,11 +228,19 @@ const metadata = {
         description: `Mitigate cloud risk by running open source on your own infrastructure, without vendor lock-in.`,
       },
     ]}
-    image={{
-      src: '~/assets/images/RAIR-Rewards-03.webp',
-      alt: 'Cloud Infrastructure Image',
-    }}
   >
+    <Fragment slot="image">
+      <TriangleHexVisualizer 
+        width={1024} 
+        height={576} 
+        backgroundColor="#030b36"
+        primaryColor="#8b5cf6"
+        secondaryColor="#3b82f6"
+        tertiaryColor="#06b6d4"
+        density={22}
+      />
+    </Fragment>
+
     <Fragment slot="content">Designed for enterprise reliability with Web3 innovation.</Fragment>
 
     <Fragment slot="bg">
@@ -239,11 +276,19 @@ const metadata = {
         icon: 'tabler:check',
       },
     ]}
-    image={{
-      src: '~/assets/images/RAIR-HowTo-04.webp',
-      alt: 'Steps image',
-    }}
-  />
+  >
+    <Fragment slot="image">
+      <TriangleHexVisualizer 
+        width={1024} 
+        height={576} 
+        backgroundColor="#030b36"
+        primaryColor="#06b6d4"
+        secondaryColor="#4338ca"
+        tertiaryColor="#3b82f6"
+        density={25}
+      />
+    </Fragment>
+  </Steps>
 
   <!-- Features2 Widget ************** -->
 
