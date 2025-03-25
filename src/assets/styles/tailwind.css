@@ -58,6 +58,37 @@
   right: 0;
   bottom: 70px !important;
   padding: 0 5px;
+  display: flex !important;
+  background-color: var(--aw-color-bg-page);
+  z-index: 50;
+}
+
+#header.expanded nav ul {
+  width: 100%;
+  padding: 1rem;
+}
+
+#header.expanded > div > div:last-child {
+  display: flex !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--aw-color-bg-page);
+  padding: 1rem;
+  z-index: 50;
+}
+
+[data-aw-toggle-menu].expanded span:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+[data-aw-toggle-menu].expanded span:nth-child(2) {
+  opacity: 0;
+}
+
+[data-aw-toggle-menu].expanded span:last-child {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .dropdown:hover .dropdown-menu {
