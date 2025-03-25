@@ -46,6 +46,16 @@ export const footerData = {
       href: '/blog',
     },
   ],
+  secondaryLinks: [
+    {
+      text: 'Privacy Policy',
+      href: '/privacy',
+    },
+    {
+      text: 'Terms of Service',
+      href: '/terms',
+    },
+  ],
   socialLinks: [
     {
       text: 'Twitter',
