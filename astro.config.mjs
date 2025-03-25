@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { defineConfig, squooshImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -9,7 +9,8 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-import tasks from './src/utils/tasks';
+
+import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
 
@@ -17,12 +18,9 @@ import { ANALYTICS, SITE } from './src/utils/config.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const hasExternalScripts = false;
 const whenExternalScripts = (items = []) =>
-  ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
   site: SITE.site,
@@ -30,6 +28,7 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'static',
+  compressHTML: true,
 
   integrations: [
     tailwind({
@@ -40,16 +39,9 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
+        'logos': [
+          'ethereum',
+          'ethereum-color',
         ],
       },
     }),
@@ -73,11 +65,20 @@ export default defineConfig({
       Logger: 1,
     }),
 
-    tasks(),
+    astrowind({
+      config: './src/config.yaml',
+    }),
   ],
 
   image: {
-    service: squooshImageService(),
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      },
+    },
+    domains: ['cdn.pixabay.com'],
+    remotePatterns: [{ protocol: 'https' }],
   },
 
   markdown: {
@@ -90,6 +91,9 @@ export default defineConfig({
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
+    },
+    define: {
+      'import.meta.env.GITHUB_IMAGES': JSON.stringify(process.env.GITHUB_IMAGES || false),
     },
   },
 });
