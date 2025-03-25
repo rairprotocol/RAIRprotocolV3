@@ -138,6 +138,33 @@ import { UI } from 'astrowind:config';
         ticking = true;
       }
     });
+
+    // Initialize image debugging helpers
+    if (typeof window !== 'undefined' && 
+        window.location.hostname.includes('netlify') &&
+        window.location.hostname !== 'localhost') {
+      
+      // Fix GitHub image loading issues
+      const images = document.querySelectorAll('img[src^="https://raw.githubusercontent.com"]');
+      images.forEach(img => {
+        img.setAttribute('crossorigin', 'anonymous');
+        img.setAttribute('referrerpolicy', 'no-referrer');
+        
+        // Force HTTPS
+        if (img.src.startsWith('http:')) {
+          img.src = img.src.replace('http:', 'https:');
+        }
+        
+        // Monitor for errors
+        img.addEventListener('error', function() {
+          console.error('Image failed to load:', img.src);
+          // Try with a different referrer policy
+          img.setAttribute('referrerpolicy', 'origin');
+        });
+      });
+      
+      console.log('Image debugging initialized on Netlify');
+    }
   };
   const onPageShow = function () {
     document.documentElement.classList.add('motion-safe:scroll-smooth');

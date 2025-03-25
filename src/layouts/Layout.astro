@@ -38,11 +38,54 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+    
+    <!-- Additional CSP meta tag for Netlify to allow loading GitHub images -->
+    {import.meta.env.PROD && (
+      <meta 
+        http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://raw.githubusercontent.com;"
+      />
+    )}
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
 
     <BasicScripts />
+    
+    <!-- Initialize image debugging on Netlify -->
+    <script>
+      // This will run after the page has loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof window !== 'undefined' && 
+            window.location.hostname.includes('netlify')) {
+          
+          // Monitor image loading
+          const images = document.querySelectorAll('img');
+          let failedCount = 0;
+          
+          images.forEach(img => {
+            if (!img.complete) {
+              img.addEventListener('error', function() {
+                failedCount++;
+                console.error('Image failed to load:', img.src);
+                
+                // Attempt to fix GitHub URLs
+                if (img.src.includes('githubusercontent')) {
+                  // Try with different attributes
+                  img.crossOrigin = 'anonymous';
+                  img.referrerPolicy = 'no-referrer';
+                  
+                  // Force HTTPS
+                  if (img.src.startsWith('http:')) {
+                    img.src = img.src.replace('http:', 'https:');
+                  }
+                }
+              });
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

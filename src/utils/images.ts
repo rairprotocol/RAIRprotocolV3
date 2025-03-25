@@ -1,4 +1,5 @@
 import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization';
+import { isNetlify, toGitHubRawUrl } from './image-github-urls';
 import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
 
@@ -32,6 +33,10 @@ export const findImage = async (
 
   // Absolute paths
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
+    // Make sure HTTP URLs are converted to HTTPS when on Netlify
+    if (isNetlify() && imagePath.startsWith('http://')) {
+      return imagePath.replace('http://', 'https://');
+    }
     return imagePath;
   }
 
@@ -45,10 +50,9 @@ export const findImage = async (
   const key = imagePath.replace('~/', '/src/');
 
   // If we're in a production environment on Netlify, use GitHub raw URLs
-  if (import.meta.env.PROD && typeof window !== 'undefined' && window.location.hostname.includes('netlify')) {
+  if (isNetlify()) {
     // Transform the path to a GitHub raw URL
-    const githubPath = imagePath.replace('~/', '');
-    return `https://raw.githubusercontent.com/RAIReth/RAIRprotocolV2/main/src/${githubPath}`;
+    return toGitHubRawUrl(imagePath);
   }
 
   return images && typeof images[key] === 'function'

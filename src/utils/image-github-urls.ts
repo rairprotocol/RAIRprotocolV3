@@ -46,5 +46,10 @@ export function isNetlify(): boolean {
  * @returns Either GitHub raw URL (on Netlify) or local path (development)
  */
 export function getImageUrl(path: string): string {
-  return isNetlify() ? toGitHubRawUrl(path) : path;
+  if (!isNetlify()) {
+    return path;
+  }
+  
+  // For Netlify, force HTTPS and use githubusercontent
+  return toGitHubRawUrl(path);
 } 
