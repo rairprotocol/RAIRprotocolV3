@@ -46,24 +46,16 @@ const {
   ></canvas>
 </div>
 
-<style define:vars={{ 
-  'background-color': backgroundColor, 
-  'primary-color': primaryColor,
-  'secondary-color': secondaryColor,
-  'tertiary-color': tertiaryColor
-}}>
+<style define:vars={{ backgroundColor, primaryColor, secondaryColor, tertiaryColor }}>
+  :root {
+    --background-color: var(--backgroundColor);
+    --primary-color: var(--primaryColor);
+    --secondary-color: var(--secondaryColor);
+    --tertiary-color: var(--tertiaryColor);
+  }
 </style>
 
-<script define:vars={{ 
-  id, 
-  width, 
-  height, 
-  backgroundColor, 
-  primaryColor, 
-  secondaryColor, 
-  tertiaryColor, 
-  density 
-}}>
+<script define:vars={{ id, width, height, backgroundColor, primaryColor, secondaryColor, tertiaryColor, density }}>
 document.addEventListener('DOMContentLoaded', function() {
   const canvas = document.getElementById(`${id}-canvas`);
   if (!canvas || !(canvas instanceof HTMLCanvasElement)) return;
