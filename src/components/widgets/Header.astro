@@ -142,7 +142,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
 
   <!-- Mobile menu -->
   <div class="md:hidden">
-    <div class="fixed inset-0 z-40 hidden bg-gray-600/75 dark:bg-gray-900/75 transition-opacity" id="mobile-menu-overlay"></div>
+    <div class="fixed inset-0 z-40 bg-gray-600/75 dark:bg-gray-900/75 transition-opacity duration-300" id="mobile-menu-overlay"></div>
     <div class="fixed inset-y-0 right-0 z-50 w-full max-w-xs transform overflow-y-auto bg-white px-6 py-6 shadow-xl transition-transform duration-300 ease-in-out dark:bg-gray-800 md:hidden" id="mobile-menu">
       <div class="flex items-center justify-between">
         <a class="flex items-center" href={getHomePermalink()}>
@@ -221,5 +221,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
   #header.expanded #mobile-menu-overlay {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Ensure dropdowns are visible on hover */
+  .group:hover .group-hover\:visible {
+    visibility: visible;
+  }
+  
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
   }
 </style>
