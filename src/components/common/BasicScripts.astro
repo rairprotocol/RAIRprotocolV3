@@ -47,22 +47,19 @@ import { UI } from '~/utils/config';
     attachEvent('#header nav', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
       document.body.classList.remove('overflow-hidden');
-      document.getElementById('header')?.classList.remove('expanded');
-      document.getElementById('mobile-menu-overlay')?.classList.add('hidden');
+      document.getElementById('mobile-menu-container')?.classList.remove('expanded');
     });
 
     attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
       elem.classList.toggle('expanded');
       document.body.classList.toggle('overflow-hidden');
-      document.getElementById('header')?.classList.toggle('expanded');
-      document.getElementById('mobile-menu-overlay')?.classList.toggle('hidden');
+      document.getElementById('mobile-menu-container')?.classList.toggle('expanded');
     });
 
     attachEvent('#mobile-menu-overlay', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
       document.body.classList.remove('overflow-hidden');
-      document.getElementById('header')?.classList.remove('expanded');
-      document.getElementById('mobile-menu-overlay')?.classList.add('hidden');
+      document.getElementById('mobile-menu-container')?.classList.remove('expanded');
     });
 
     attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
@@ -110,8 +107,7 @@ import { UI } from '~/utils/config';
     screenSize.addEventListener('change', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
       document.body.classList.remove('overflow-hidden');
-      document.getElementById('header')?.classList.remove('expanded');
-      document.getElementById('mobile-menu-overlay')?.classList.add('hidden');
+      document.getElementById('mobile-menu-container')?.classList.remove('expanded');
     });
 
     function appyHeaderStylesOnScroll() {
