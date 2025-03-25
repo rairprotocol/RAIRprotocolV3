@@ -139,9 +139,7 @@ import { UI } from '~/utils/config';
       elem.classList.remove('expanded');
     }
     document.body.classList.remove('overflow-hidden');
-    document.getElementById('header')?.classList.remove('h-screen');
-    document.getElementById('header')?.classList.remove('expanded');
-    document.querySelector('#header nav')?.classList.add('hidden');
+    document.getElementById('mobile-menu-container')?.classList.remove('expanded');
   };
 
   window.onload = onLoad;
