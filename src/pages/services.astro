@@ -7,7 +7,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'RAIR Protocol Services',
+  title: 'Services',
 };
 ---
 
@@ -16,73 +16,73 @@ const metadata = {
 
   <Hero
     tagline="Services"
-    title="Deploy with confidence on RAIR Protocol"
-    subtitle="Explore our comprehensive suite of Web3 deployment services designed for enterprise needs. From containerization to managed SaaS options, we offer the infrastructure you need to succeed in Web3."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Deploy Now', href: 'https://github.com/Ra-Protocol/ra-protocol' }]}
+    title="Elevate your projects with our stunning templates"
+    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
+    actions={[{ variant:"primary", target: '_blank', text: 'Start exploring', href: '/' }]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'RAIR Protocol Services',
+      alt: 'AstroWind Hero Image',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our service offerings"
-    subtitle="RAIR Protocol provides a complete ecosystem for Web3 deployment."
+    title="Explore our diverse templates"
+    subtitle="Discover our selection below to streamline and elevate your projects."
     columns={3}
     items={[
       {
-        title: 'Deployment Layer',
+        title: 'Educational',
         description:
-          'RAIRTECH provides oversight and support for containerization of RAIR Protocol infrastructure to any cloud environment through Docker-based workflows.',
-        icon: 'tabler:cloud-upload',
+          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
+        icon: 'tabler:school',
       },
       {
-        title: 'Open Source Backend',
+        title: 'Interior Design',
         description:
-          'Fully auditable source code including a fully open source backend (RAIR-NODE) that lets you create your own API endpoints on your own infrastructure.',
-        icon: 'tabler:code',
+          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
+        icon: 'tabler:home-star',
       },
       {
-        title: 'EVM Workflows',
-        description: `Leading EVM-based workflows with easy onboarding for email and social login through advanced AA. Supporting all major EVM blockchains.`,
-        icon: 'logos:ethereum',
+        title: 'Photography',
+        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
+        icon: 'tabler:photo',
       },
       {
-        title: 'Enterprise SaaS',
+        title: 'E-commerce',
         description:
-          'Your enterprise demands reliability and uptime, combining our open source development with proven cloud engineering from ex-FAANG engineers.',
-        icon: 'tabler:server',
+          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'K8 Deployments',
+        title: 'Blog',
         description:
-          'Scalable Kubernetes deployments managed by experts and optimized for GKE and Akash Network environments with 24/7 monitoring and uptime.',
-        icon: 'tabler:container',
+          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
+        icon: 'tabler:article',
       },
       {
-        title: 'Migration Support',
+        title: 'Business',
         description:
-          'Full migration support for hosted environments. Mitigate cloud risk by running open source on your own infrastructure.',
-        icon: 'tabler:refresh',
+          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
+        icon: 'tabler:building-store',
       },
       {
-        title: 'Integration Network',
+        title: 'Branding',
         description:
-          'Our partner network includes 40+ direct integration partners across Web2 and Web3, ready to connect with your infrastructure.',
-        icon: 'tabler:puzzle',
+          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
+        icon: 'tabler:arrow-big-up-lines',
       },
       {
-        title: 'Blockchain Support',
-        description: `Full EVM support for Base, Soneium, Astar, Polygon, Binance Smart Chain, CoreDAO, Ethereum + Testnets (Sepolia).`,
-        icon: 'logos:ethereum-color',
+        title: 'Medical',
+        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
+        icon: 'tabler:vaccine',
       },
       {
-        title: 'Custom Development',
+        title: 'Fashion Design',
         description:
-          'Need a specific integration? We release new integrations monthly and can customize solutions for your specific enterprise needs.',
-        icon: 'tabler:tools',
+          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
+        icon: 'tabler:tie',
       },
     ]}
   />
@@ -93,37 +93,37 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Self-Sovereign Infrastructure',
+        title: 'High-Quality Designs',
         description:
-          'The dApp layer of Web3 needs to be just as resilient as the underlying blockchains that power them.',
-        icon: 'tabler:shield-lock',
+          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
+        icon: 'tabler:wand',
       },
       {
-        title: 'No API Risk',
+        title: 'Customization Tools',
         description:
-          'Eliminate vendor risk by easily swapping out one provider for another. No mandatory centralized API secrets required.',
-        icon: 'tabler:api',
+          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
+        icon: 'tabler:settings',
       },
       {
-        title: 'Docker Workflows',
+        title: 'Pre-Designed Elements',
         description:
-          'Docker-based workflows to create and scale microservices needed to run scalable dApps on any infrastructure.',
-        icon: 'tabler:brand-docker',
+          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
+        icon: 'tabler:presentation',
       },
       {
-        title: 'Enterprise Reliability',
+        title: 'Preview and Mockup Views',
         description:
-          'Combining open source development with proven cloud engineering for Web3 deployments with Web2 reliability.',
-        icon: 'tabler:shield-check',
+          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
+        icon: 'tabler:carousel-horizontal',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'RAIR Protocol Features',
+      alt: 'Features Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Key Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
     </Fragment>
   </Content>
 
@@ -133,33 +133,33 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Eliminate Vendor Lock-in',
+        title: 'Time Savings',
         description:
-          'True open source deployment eliminates vendor lock-in and provides you with complete control over your infrastructure.',
-        icon: 'tabler:lock-open',
+          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
+        icon: 'tabler:clock',
       },
       {
-        title: 'Enterprise-Grade Security',
+        title: 'Professional Appearance',
         description:
-          'Secure your Web3 deployments with enterprise-grade security practices and fully auditable open source code.',
-        icon: 'tabler:shield',
+          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
+        icon: 'tabler:school',
       },
       {
         title: 'Cost-Efficiency',
         description:
-          'Reduce costs by running on your preferred infrastructure and avoiding expensive API fees from proprietary Web3 service providers.',
+          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
         icon: 'tabler:coin',
       },
       {
-        title: 'Future-Proof Your Stack',
+        title: 'Instant Download',
         description:
-          'With an open source foundation, your infrastructure can evolve with the rapidly changing Web3 landscape without painful migrations.',
-        icon: 'tabler:rocket',
+          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
+        icon: 'tabler:file-download',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'RAIR Protocol Benefits',
+      alt: 'Benefits Image',
     }}
   >
     <Fragment slot="content">
@@ -170,40 +170,40 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
-    title="What our partners are saying"
+    title="Words from real customers"
     testimonials={[
       {
-        testimonial: `RAIR Protocol has transformed our approach to Web3 deployment. Their open source model gives us the control and flexibility we need while their managed services provide the reliability our enterprise demands.`,
-        name: 'Enterprise Partner',
-        job: 'CTO',
+        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
+        name: 'Emily Kennedy',
+        job: 'Front-end developer',
         image: {
           src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Enterprise Partner Image',
+          alt: 'Emily Kennedy Image',
         },
       },
       {
-        testimonial: `The elimination of API risk was a game-changer for us. No more being locked into proprietary services or worrying about vendor outages. RAIR Protocol's containerization approach gave us true self-sovereignty over our infrastructure.`,
-        name: 'Blockchain Company',
-        job: 'Lead Developer',
+        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
+        name: 'Sarah Hansen',
+        job: 'Photographer',
         image: {
           src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Developer Image',
+          alt: 'Sarah Hansen Image',
         },
       },
       {
-        testimonial: `RAIR Protocol's integration network made connecting with all the services we needed simple and efficient. Their team's expertise in containerization and cloud deployment saved us months of development time.`,
-        name: 'Web3 Startup',
-        job: 'Founder',
+        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
+        name: 'Mark Wilkinson',
+        job: 'Small business owner',
         image: {
           src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Founder Image',
+          alt: 'Mark Wilkinson Image',
         },
       },
     ]}
     callToAction={{
       target: '_blank',
-      text: 'Learn more about our partners',
-      href: '/about',
+      text: 'More testimonials...',
+      href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:chevron-right',
     }}
   />
@@ -211,15 +211,12 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Deploy Now',
-        href: 'https://github.com/Ra-Protocol/ra-protocol',
-        target: '_blank',
-      },
-    ]}
-    title="Ready to deploy with RAIR Protocol?"
-    subtitle="Whether you're an enterprise, developer, or Web3 enthusiast, our infrastructure is here to empower your decentralized journey."
+    actions={[{
+      variant: "primary",
+      text: 'Start exploring',
+      href: '/',
+    }]}
+    title="Dive into our template collection"
+    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
   />
 </Layout>

@@ -11,10 +11,9 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import TriangleHexVisualizer from '~/components/common/TriangleHexVisualizer.astro';
 
 const metadata = {
-  title: 'RAIR Protocol — Open-source Web3 deployment layer for enterprise',
+  title: 'RAIRprotocol enables the creation of scalable Dapps through an open token licensing model',
   ignoreTitleTemplate: true,
 };
 ---
@@ -26,37 +25,25 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'GitHub',
-        href: 'https://github.com/Ra-Protocol/ra-protocol',
+        text: 'Source Code',
+        href: 'https://github.com/rairprotocol',
         target: '_blank',
-        icon: 'tabler:brand-github',
+        icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Knowledge Base', href: 'https://docs.rairprotocol.org' },
     ]}
+    image={{ src: '~/assets/images/rairprotocol-maingraphic-v1.png', alt: 'RAIRprotocol Hero Image' }}
   >
     <Fragment slot="title">
-      Your <span class="hidden xl:inline">Web3 Deployment</span>
-      <span class="text-accent dark:text-white highlight"> Partner</span>
+      Open Infrastructure for <span class="hidden xl:inline">creating</span>
+      <span class="text-accent dark:text-white highlight"> dApps </span>that Scale
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">RAIR Protocol</span> is a truly open deployment layer for Web3, eliminating API risks and fulfilling the transparent promise of decentralization.</span>
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">RAIR Protocol: Truly Open.</span>
-      Empowering enterprises with open-source Web3 deployment for seamless and secure integration with your business.
-    </Fragment>
-
-    <Fragment slot="image">
-      <TriangleHexVisualizer 
-        width={1024} 
-        height={576} 
-        loading="eager"
-        primaryColor="#4338ca"
-        secondaryColor="#3b82f6"
-        tertiaryColor="#06b6d4"
-        backgroundColor="#030b36"
-        density={20}
-      />
+        <span class="font-semibold"></span>#Buidl your own decentralized APIs.</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">10x Faster Deployment.</span>
+       Resilient dApp creation architecture you can truly own.  
     </Fragment>
   </Hero>
 
@@ -68,45 +55,45 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with RAIR Protocol"
-    subtitle="One of the most comprehensive open-source deployment layers for Web3, designed to empower enterprises with self-sovereign infrastructure."
+    tagline="Bring Your Own Cloud"
+    title="What you get with RAIRprotocol"
+    subtitle="Complete Dapp Infrastructure"
     items={[
       {
-        title: 'Self-Sovereign Infrastructure',
+        title: 'RAIRsolidity',
         description:
-          'The dApp layer of Web3 needs to be just as resilient as the underlying blockchains that power them.',
-        icon: 'tabler:shield-lock',
+          'Granular onchain NFT minting, royalty, resale, fungible token credit, and marketplace logic via ERC2535 upgradeable diamond multi-proxy contracts.',
+        icon: 'tabler:currency-ethereum',
       },
       {
-        title: 'No API Risk',
+        title: 'RAIRnode',
         description:
-          'Eliminate vendor risk by easily swapping out one provider for another. No mandatory centralized API secrets required for our platform to work.',
-        icon: 'tabler:api',
+          'Backend to create your own modular API endpoints and offchain infrastructure. Configurable with 100+ environment variables for easily deployment.',
+        icon: 'tabler:database-cog',
       },
       {
-        title: 'Fully Auditable Source Code',
+        title: 'RAIRfrontend',
         description:
-          'Including a fully open source backend (RAIR-NODE). Create your own API endpoints on your own infrastructure.',
-        icon: 'tabler:code',
+          'Deploy customizable mobile first NFT marketplace frontends using modular REACT + Typescript framework. Easy whitelabel deployment via pre built UI/UX configurations. Full administrator dashboards.',
+        icon: 'tabler:device-tablet',
       },
       {
-        title: 'Docker Based Workflows',
+        title: 'RAIRstream',
         description:
-          'Create and scale microservices needed to run scalable dApps through containerization in any cloud environment.',
-        icon: 'tabler:container',
+          'DRM protect content with a full FFmpeg encoder/transcoder. Hashicorp Vault or database KMS credentials to create the ultimate secure DRM media systems.',
+        icon: 'tabler:badge-4k',
       },
       {
-        title: 'EVM-based Workflows',
+        title: 'RAIRsync',
         description:
-          'Leading EVM support with easy onboarding for email and social login through advanced AA (Account Abstraction).',
-        icon: 'tabler:wallet',
+          "Specify all smart contract addresses to sync via Alchemy syncing engine. RPC syncing fallback. Support for all Alchemy supported blockchains. Efficient syncing from selectable block heights.",
+        icon: 'tabler:refresh',
       },
       {
-        title: 'Open to Partners',
+        title: 'RAIRinfra',
         description:
-          'Our partner network includes 40+ direct integration partners across Web2 and Web3 ecosystems.',
-        icon: 'tabler:users',
+          'RAIR is committed to fully open sourcing all aspects of our knowledge base. This includes: Terraform scripts, CI/CD pipeline, Kubernetes configurations. Deploy full MongoDB Cloud Atlas instances with a scalable offchain trade and execution engine.',
+        icon: 'tabler:building-bridge',
       },
     ]}
   />
@@ -115,41 +102,33 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Our Philosophy"
-    title="True Enterprise Web3 Powered by Open Source"
+    tagline="Clone our repo to earn rewards"
+    title="Innovative Licensing Model"
     items={[
       {
-        title: 'Trust in Architecture',
+        title: 'Apache2.0 Reimagined',
         description:
-          'For enterprises to truly scale into Web3, they must first trust the underlying architecture.',
+          'Adapting Apache2.0 for the Web3 Era. Token burn based licensing model',
       },
       {
-        title: 'Beyond Blackbox SaaS',
+        title: 'NOTICE file NFTs',
         description:
-          'Blackbox SaaS models have hampered the development of enterprise-grade Web3 deployments for too long.',
+          'Provenance inside NOTICE file in all derivative codebases proves a valid open source license exists onchain',
       },
       {
-        title: 'Open Source Advantage',
+        title: 'Fair Pricing',
         description:
-          'Only a true open source deployment ecosystem can unlock the enterprise adoption our industry needs to scale to the next billion users.',
+          'Free for developers, graduated scale for enterprise based on % of ARR',
       },
     ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Licensing-01%20(1).webp',
+      alt: 'Colorful Image',
+    }}
   >
-    <Fragment slot="image">
-      <TriangleHexVisualizer 
-        width={1024} 
-        height={576} 
-        backgroundColor="#030b36"
-        primaryColor="#4338ca"
-        secondaryColor="#3b82f6"
-        tertiaryColor="#38bdf8"
-        density={15}
-      />
-    </Fragment>
-
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on Blockchain Foundations</h3>
-      Gain a competitive advantage with truly open source Web3 infrastructure
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Licensing</h3>
+       A novel approach to open-source. Fully open with onchain license tracking 
     </Fragment>
 
     <Fragment slot="bg">
@@ -163,40 +142,33 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Deployment Layer',
-        description: `RAIR Protocol provides oversight and support for the containerization of Web3 infrastructure to any cloud environment.`,
+        title: '1,000,000,000 RAIR',
+        description: `Designed to reward active network development`,
       },
       {
-        title: 'Fully Auditable',
+        title: 'Distribution',
         description:
-          'Create your own API endpoints on your own infrastructure with our fully open source backend.',
+          'Fund code audits, developer grants, CEX listings, strategic partnerships, all with eleganty designed lockup periods',
       },
       {
-        title: 'Full EVM Support',
+        title: 'Emissions',
         description:
-          "Support for Base, Soneum, Astar, Polygon, Binance Smart Chain, CoreDAO, Ethereum and testnets.",
+          "To balance the needs of early adopters and later participants through emissions curve release schedule",
       },
       {
-        title: 'Integration Partners',
+        title: 'Governance',
         description:
-          'Connect with 40+ direct integration partners across Web2 and Web3, including cloud providers, storage solutions, and more.',
+          'To foster longterm sustainable development',
       },
     ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Tokenomics-02%20(1).webp',
+      alt: 'Blueprint Image',
+    }}
   >
-    <Fragment slot="image">
-      <TriangleHexVisualizer 
-        width={1024} 
-        height={576} 
-        backgroundColor="#030b36"
-        primaryColor="#3b82f6"
-        secondaryColor="#6366f1"
-        tertiaryColor="#06b6d4"
-        density={18}
-      />
-    </Fragment>
-
-    <Fragment slot="content">Ensure your Web3 presence has a foundation you can trust.</Fragment>
-
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Tokenomics</h3>
+    Stewards the RAIR open codebase into the future with a sustainable decentralized funding mechanism
+  </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
@@ -209,39 +181,33 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Managed SaaS',
-        description:
-          'Your enterprise demands reliability and uptime, combining our open source development with proven cloud engineering.',
+        title: 'Earn Network Rewards',
+        description: `Only wallets with valid License NFTs can receive rewards. Earn tokens for making our codebase better!`,
       },
       {
-        title: 'Scalable K8 Deployments',
+        title: 'Submit New Features',
         description:
-          'Managed by experts and optimized for GKE and Akash Network environments with 24/7 monitoring and uptime.',
+          'License holders can vote on new features. Fast track new enterprise development initiatives',
       },
       {
-        title: 'Migration Support',
+        title: 'Submit Pull Requests',
         description:
-          'Get full support for migrating fully hosted environments to your own infrastructure.',
+          'DAO maintains the core codebase. Merges improvements and features from the community',
       },
       {
-        title: 'Cloud Risk Mitigation',
-        description: `Mitigate cloud risk by running open source on your own infrastructure, without vendor lock-in.`,
+        title: 'Vote on System Wide Changes',
+        description:
+          'Have a say in important matters development roadmap & financial',
       },
     ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Rewards-03%20(1).webp',
+      alt: 'Astronauts Image',
+    }}
   >
-    <Fragment slot="image">
-      <TriangleHexVisualizer 
-        width={1024} 
-        height={576} 
-        backgroundColor="#030b36"
-        primaryColor="#8b5cf6"
-        secondaryColor="#3b82f6"
-        tertiaryColor="#06b6d4"
-        density={22}
-      />
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Rewards</h3>
+    NFT license holders earn rewards and govern the project
     </Fragment>
-
-    <Fragment slot="content">Designed for enterprise reliability with Web3 innovation.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -251,85 +217,93 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your Web3 infrastructure up and running with RAIR Protocol."
+    title="How to license RAIR"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Deploy</span>',
+        title: 'Step 1: <span class="font-medium">Clone</span>',
         description:
-          "Start with RAIR Protocol's GitHub repository. Use Docker-based workflows to containerize your Web3 infrastructure in any cloud environment.",
+          "Clone the rair-dapp Github repo to get your project started. Everything you'll need is in there just run docker",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Configure</span>',
+        title: 'Step 2: <span class="font-medium">Apply</em>',
         description:
-          "Set up your own API endpoints on your infrastructure, eliminating API risks and vendor lock-in. Connect with our 40+ integration partners.",
-        icon: 'tabler:settings',
+          "For an official open source NFT license from the RAIR DAO.",
+        icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Scale</span>',
+        title: 'Step 3: <span class="font-medium">Commit</span>',
         description:
-          'Leverage our managed SaaS options for enterprise reliability, with scalable K8 deployments optimized for various environments and 24/7 monitoring.',
-        icon: 'tabler:chart-arrows',
+          'Update the NOTICE file in your Git repo with your official RAIR NFT',
+        icon: 'tabler:paint',
       },
       {
-        title: 'Ready!',
+        title: 'Contribute to development and receive RAIR tokens!',
         icon: 'tabler:check',
       },
     ]}
-  >
-    <Fragment slot="image">
-      <TriangleHexVisualizer 
-        width={1024} 
-        height={576} 
-        backgroundColor="#030b36"
-        primaryColor="#06b6d4"
-        secondaryColor="#4338ca"
-        tertiaryColor="#3b82f6"
-        density={25}
-      />
-    </Fragment>
-  </Steps>
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-HowTo-04%20(1).webp',
+      alt: 'Steps image',
+    }}
+  />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our Partner Network"
-    subtitle="Connect with 40+ direct integration partners across Web2 and Web3"
-    tagline="Partners"
+    title="Ready for your API keys"
+    subtitle="Critical Web3 infrastructure providers that have partnered with RAIRprotocol to provide out-of-the-box integration solutions"
+    tagline="Integration Partners"
     items={[
       {
-        title: 'Cloud Compute',
-        description: "Akash Network, Google Cloud (Web3 Startup Graduate, GKE Certified Engineers), Azure, AWS + Contabo (for low cost deployment)",
-        icon: 'tabler:database',
+        title: 'Alchemy Sync',
+        description: "Scalable syncing from supported EVM blockchains with one click",
+        icon: 'flat-color-icons:template',
       },
       {
-        title: 'Decentralized Storage',
+        title: 'Alchemy Account Kit',
         description:
-          "Filebase (preferred provider for bandwidth and pinning), Pinata Cloud, Arweave, native IPFS",
-        icon: 'tabler:photo',
+          "Deploy AA ERC-4337 smart accounts for your users",
+        icon: 'flat-color-icons:gallery',
       },
       {
-        title: 'Syncing',
+        title: 'Web3Auth',
         description:
-          'Alchemy (preferred RPC partner with optimization for AA workflows), Moralis, Infura + Native RPC syncing from any public RPC URL',
-        icon: 'tabler:refresh',
+          'Store user AA access credentials securely via self-custodial MPC',
+        icon: 'flat-color-icons:approval',
       },
       {
-        title: 'AA/Signing',
+        title: 'Yoti',
         description:
-          "Alchemy Account Kit, Web3Auth (preferred MPC provider), Privy, Thirdweb",
-        icon: 'tabler:file-text',
+          "Build fully KYC/AML and age compliant workflows via AI recognition",
+        icon: 'flat-color-icons:document',
       },
       {
-        title: 'Infrastructure',
+        title: 'Mongodb Cloud Atlas',
         description:
-          "MongoDB (Cloud Atlas or Native), Hashicorp (Vault and Terraform), Vite.js, REDIS, Docker & Compose, Hardhat, Mythx, Selenium",
-        icon: 'tabler:template',
+          'Deploy your own scalable database backends',
+        icon: 'flat-color-icons:advertising',
       },
       {
-        title: 'Blockchains',
-        description: 'Full EVM support for Base, Soneium, Astar, Polygon, Binance Smart Chain, CoreDAO, Ethereum + Testnets (Sepolia)',
-        icon: 'logos:ethereum-color',
+        title: 'Hashicorp Vault',
+        description: 'Store secret securely using industry best practice',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Filebase',
+        description: 'High quality low cost IPFS and IPNS pinning and bandwidth',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Terraform',
+        description:
+          'Cloud deployment infrastructure-as-code',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Coingecko',
+        description: "Onchain pricing and data feeds",
+        icon: 'flat-color-icons:database',
       },
     ]}
   >
@@ -338,52 +312,53 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- HighlightedPosts Widget ******* -->
+  <!-- HighlightedPosts Widget *******  commenting out the blog-->
 
-  <BlogLatestPosts
-    title="Latest Updates from RAIR Protocol"
-    information={`Stay updated with the latest developments, integrations, and improvements to RAIR Protocol.
-                        We regularly release new integrations and enhancements to make your Web3 deployment experience even better.
+  <!-- <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
                 `}
-  />
+  />-->
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Learn more about how RAIR Protocol can help your enterprise deploy secure and open Web3 infrastructure."
+    subtitle="What is RAIRprotocol all about?"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
-      {
-        title: 'Why RAIR Protocol?',
+   {
+        title: 'Can you ELI5',
         description:
-          "RAIR Protocol offers a truly open deployment layer for Web3, eliminating API risks and providing self-sovereign infrastructure. Unlike traditional SaaS models, we enable enterprises to create their own API endpoints on their own infrastructure without vendor lock-in.",
+          "Sure! RAIR is a bunch of Web3 Dapp code we are open sourcing to make Dapp building 10x easier for everyone else",
       },
       {
-        title: 'What integrations are available?',
+        title: 'Why is RAIR licensing its code as an NFT?',
         description:
-          'We offer 40+ direct integration partners across Web2 and Web3, including cloud compute providers (Akash Network, Google Cloud, Azure, AWS), decentralized storage solutions (Filebase, Pinata Cloud, Arweave, IPFS), syncing services, and blockchain networks with full EVM support.',
+          'We want to keep RAIR free and open, while also embracing our Web3 roots. It makes sense to track licenses onchain as NFTs as this creates an immutable provenance chain of title across codebases',
       },
       {
-        title: 'How do I deploy RAIR Protocol?',
+        title: 'What is Apache 2.0?',
         description:
-          "RAIR Protocol uses Docker-based workflows to containerize Web3 infrastructure in any cloud environment. You can start with our GitHub repository and follow our documentation to set up your own deployment. We also offer managed SaaS options for enterprise customers seeking reliability and 24/7 support.",
+          "Apache 2.0 is an open source license standard that requires 2 key things to license. 1 - if you change the code publish the changelog. 2 publish the original creators NOTICE file in the new codebase. This second clause enables our NFT licensing to work.",
       },
       {
-        title: "What blockchains are supported?",
+        title: "Who is behind RAIR?",
         description:
-          "RAIR Protocol offers full EVM support for multiple blockchains, including Base, Soneium, Astar, Polygon, Binance Smart Chain, CoreDAO, Ethereum, and various testnets like Sepolia.",
+          "A team of doxxed enterprise SaaS entrepreneurs building in Web3 since 2016. See rair.info C Corp site for bios",
       },
       {
-        title: 'Is enterprise support available?',
+        title: 'Why does RAIR need a token?',
         description:
-          "Yes, we offer comprehensive enterprise support including managed SaaS options, scalable K8 deployments optimized for various environments, 24/7 monitoring, migration support, and cloud risk mitigation strategies.",
+          "To make a circular economy is the short answer. To fund open source development is another answer. Capturing the value generated by open source software is the ultimate answer",
       },
       {
-        title: 'How can I contribute to RAIR Protocol?',
+        title: 'What happens if I choose not to get an NFT license?',
         description:
-          "RAIR Protocol is an open-source project. You can contribute by creating issues on our GitHub repository for new features or integrations you'd like to see. We welcome community involvement and regularly release new integrations based on user feedback.",
+          "Likely nothing. The code is open so you can fork it without attribution if you really want to. If you monetize the code in a significant way (2m+ ARR) the DAO will bug you into compliance. Hopefully the value provided by the software exceeds the cost in RAIR to use officially.",
       },
     ]}
   />
@@ -392,10 +367,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Integrations', amount: '40+' },
-      { title: 'Blockchains', amount: '7+' },
-      { title: 'Enterprise Deployments', amount: '25+' },
-      { title: 'Cloud Partners', amount: '5+' },
+      { title: 'Years of development', amount: '4' },
+      { title: 'Commits', amount: '4600+' },
+      { title: 'API endpoints', amount: '88+' },
+      { title: 'Development cost', amount: '3M+' },
     ]}
   />
 
@@ -405,20 +380,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get Started',
-        href: 'https://github.com/Ra-Protocol/ra-protocol',
+        text: 'Apply',
+        href: 'https://calendly.com/rairprotocol',
         target: '_blank',
-        icon: 'tabler:brand-github',
+        icon: 'tabler:mail-filled',
       },
     ]}
   >
     <Fragment slot="title">
-      RAIR&nbsp;Protocol&nbsp;-&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Open Source Web3</span>
+      RAIRprotocol&nbsp;needs&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">you!</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Deploy your Web3 infrastructure with confidence. <br class="hidden md:inline" />
-      No API risk. No vendor lock-in. Just open source.
+      Apply for Association membership today<br class="hidden md:inline" />Get access to the full codebase and network rewards when launched
     </Fragment>
   </CallToAction>
 </Layout>

@@ -24,9 +24,9 @@ export interface Post {
   image?: ImageMetadata | string;
 
   /**  */
-  category?: Taxonomy;
+  category?: string;
   /**  */
-  tags?: Taxonomy[];
+  tags?: Array<string>;
   /**  */
   author?: string;
 
@@ -42,11 +42,6 @@ export interface Post {
 
   /**  */
   readingTime?: number;
-}
-
-export interface Taxonomy {
-  slug: string;
-  title: string;
 }
 
 export interface MetaData {
@@ -102,7 +97,7 @@ export interface Widget {
   id?: string;
   isDark?: boolean;
   bg?: string;
-  classes?: Record<string, string | Record<string, string>>;
+  classes?: Record<string, string>;
 }
 
 export interface Headline {
@@ -127,7 +122,7 @@ interface Social {
 }
 
 export interface Stat {
-  amount?: number | string;
+  amount?: number;
   title?: string;
   icon?: string;
 }
@@ -145,7 +140,7 @@ export interface Price {
   title?: string;
   subtitle?: string;
   description?: string;
-  price?: number | string;
+  price?: number;
   period?: string;
   items?: Array<Item>;
   callToAction?: CallToAction;
@@ -171,7 +166,7 @@ export interface Input {
 
 export interface Textarea {
   label?: string;
-  name?: string;
+  name: string;
   placeholder?: string;
   rows?: number;
 }
@@ -181,7 +176,7 @@ export interface Disclaimer {
 }
 
 // COMPONENTS
-export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
+export interface CallToAction extends HTMLAttributes<a> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   text?: string;
   icon?: string;
@@ -213,39 +208,41 @@ export interface Form {
 }
 
 // WIDGETS
-export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
+export interface Hero extends Headline, Widget {
   content?: string;
-  actions?: string | CallToAction[];
   image?: string | unknown;
+  callToAction1?: CallToAction;
+  callToAction2?: CallToAction;
+  isReversed?: boolean;
 }
 
-export interface Team extends Omit<Headline, 'classes'>, Widget {
+export interface Team extends Headline, Widget {
   team?: Array<TeamMember>;
 }
 
-export interface Stats extends Omit<Headline, 'classes'>, Widget {
+export interface Stats extends Headline, Widget {
   stats?: Array<Stat>;
 }
 
-export interface Pricing extends Omit<Headline, 'classes'>, Widget {
+export interface Pricing extends Headline, Widget {
   prices?: Array<Price>;
 }
 
-export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
+export interface Testimonials extends Headline, Widget {
   testimonials?: Array<Testimonial>;
   callToAction?: CallToAction;
 }
 
-export interface Brands extends Omit<Headline, 'classes'>, Widget {
+export interface Brands extends Headline, Widget {
   icons?: Array<string>;
   images?: Array<Image>;
 }
 
-export interface Features extends Omit<Headline, 'classes'>, Widget {
+export interface Features extends Headline, Widget {
   image?: string | unknown;
   video?: Video;
-  items?: Array<Item>;
-  columns?: number;
+  items: Array<Item>;
+  columns: number;
   defaultIcon?: string;
   callToAction1?: CallToAction;
   callToAction2?: CallToAction;
@@ -254,14 +251,14 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   isAfterContent?: boolean;
 }
 
-export interface Faqs extends Omit<Headline, 'classes'>, Widget {
+export interface Faqs extends Headline, Widget {
   iconUp?: string;
   iconDown?: string;
   items?: Array<Item>;
   columns?: number;
 }
 
-export interface Steps extends Omit<Headline, 'classes'>, Widget {
+export interface Steps extends Headline, Widget {
   items: Array<{
     title: string;
     description?: string;
@@ -273,7 +270,7 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
 }
 
-export interface Content extends Omit<Headline, 'classes'>, Widget {
+export interface Content extends Headline, Widget {
   content?: string;
   image?: string | unknown;
   items?: Array<Item>;
@@ -283,4 +280,4 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+export interface Contact extends Headline, Form, Widget {}

@@ -1,5 +1,4 @@
-import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization';
-import { isNetlify, toGitHubRawUrl } from './image-github-urls';
+import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
 
@@ -7,8 +6,7 @@ const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
   try {
     images = import.meta.glob('~/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch (e) {
     // continue regardless of error
   }
   return images;
@@ -33,10 +31,6 @@ export const findImage = async (
 
   // Absolute paths
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
-    // Make sure HTTP URLs are converted to HTTPS when on Netlify
-    if (isNetlify() && imagePath.startsWith('http://')) {
-      return imagePath.replace('http://', 'https://');
-    }
     return imagePath;
   }
 
@@ -45,15 +39,8 @@ export const findImage = async (
     return imagePath;
   }
 
-  // First try the import.meta.glob approach
   const images = await fetchLocalImages();
   const key = imagePath.replace('~/', '/src/');
-
-  // If we're in a production environment on Netlify, use GitHub raw URLs
-  if (isNetlify()) {
-    // Transform the path to a GitHub raw URL
-    return toGitHubRawUrl(imagePath);
-  }
 
   return images && typeof images[key] === 'function'
     ? ((await images[key]()) as { default: ImageMetadata })['default']
@@ -76,34 +63,23 @@ export const adaptOpenGraphImages = async (
   const adaptedImages = await Promise.all(
     images.map(async (image) => {
       if (image?.url) {
-        const resolvedImage = (await findImage(image.url)) as ImageMetadata | string | undefined;
+        const resolvedImage = (await findImage(image.url)) as ImageMetadata | undefined;
         if (!resolvedImage) {
           return {
             url: '',
           };
         }
 
-        let _image;
-
-        if (
-          typeof resolvedImage === 'string' &&
-          (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) &&
-          isUnpicCompatible(resolvedImage)
-        ) {
-          _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
-        } else if (resolvedImage) {
-          const dimensions =
-            typeof resolvedImage !== 'string' && resolvedImage?.width <= defaultWidth
-              ? [resolvedImage?.width, resolvedImage?.height]
-              : [defaultWidth, defaultHeight];
-          _image = (
-            await astroAssetsOptimizer(resolvedImage, [dimensions[0]], dimensions[0], dimensions[1], 'jpg')
-          )[0];
-        }
+        const _image = await getImage({
+          src: resolvedImage,
+          alt: 'Placeholder alt',
+          width: image?.width || defaultWidth,
+          height: image?.height || defaultHeight,
+        });
 
         if (typeof _image === 'object') {
           return {
-            url: 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '',
+            url: 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : 'pepe',
             width: 'width' in _image && typeof _image.width === 'number' ? _image.width : undefined,
             height: 'height' in _image && typeof _image.height === 'number' ? _image.height : undefined,
           };
