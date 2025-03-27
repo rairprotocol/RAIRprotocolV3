@@ -38,12 +38,19 @@ export default defineConfig({
     mdx(),
     icon({
       include: {
-        tabler: ['*'],
+        'fa6-solid': ['*'],
+        'fa6-brands': ['*'],
+        'fa6-regular': ['*'],
+        'fa-solid': ['*'],
+        'fa-brands': ['*'],
+        'fa-regular': ['*'],
+        'tabler': ['*'],
         'logos': [
           'ethereum',
           'ethereum-color',
         ],
       },
+      exclude: ['local'],
     }),
 
     ...whenExternalScripts(() =>

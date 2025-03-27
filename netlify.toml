@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm install --verbose && npm run build --verbose"
+  command = "npm run build"
 [build.processing.html]
   pretty_urls = false
 [[headers]]

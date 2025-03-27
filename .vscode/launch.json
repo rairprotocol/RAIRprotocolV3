@@ -2,10 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "./node_modules/.bin/astro dev",
+      "command": "./node_modules/.bin/astro dev --host",
       "name": "Development server",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "env": {
+        "PORT": "3000",
+        "HOST": "0.0.0.0"
+      }
     }
   ]
 }
