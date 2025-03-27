@@ -49,8 +49,7 @@ export default defineConfig({
           'ethereum',
           'ethereum-color',
         ],
-      },
-      exclude: ['local'],
+      }
     }),
 
     ...whenExternalScripts(() =>
