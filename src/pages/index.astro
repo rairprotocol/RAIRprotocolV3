@@ -52,242 +52,6 @@ const metadata = {
 
   <Note />
 
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="Bring Your Own Cloud"
-    title="What you get with RAIRprotocol"
-    subtitle="Complete Dapp Infrastructure"
-    items={[
-      {
-        title: 'RAIRsolidity',
-        description:
-          'Granular onchain NFT minting, royalty, resale, fungible token credit, and marketplace logic via ERC2535 upgradeable diamond multi-proxy contracts.',
-        icon: 'fa-brands:ethereum',
-      },
-      {
-        title: 'RAIRnode',
-        description:
-          'Backend to create your own modular API endpoints and offchain infrastructure. Configurable with 100+ environment variables for easily deployment.',
-        icon: 'fa6-solid:database',
-      },
-      {
-        title: 'RAIRfrontend',
-        description:
-          'Deploy customizable mobile first NFT marketplace frontends using modular REACT + Typescript framework. Easy whitelabel deployment via pre built UI/UX configurations. Full administrator dashboards.',
-        icon: 'fa6-solid:tablet',
-      },
-      {
-        title: 'RAIRstream',
-        description:
-          'DRM protect content with a full FFmpeg encoder/transcoder. Hashicorp Vault or database KMS credentials to create the ultimate secure DRM media systems.',
-        icon: 'fa6-solid:film',
-      },
-      {
-        title: 'RAIRsync',
-        description:
-          "Specify all smart contract addresses to sync via Alchemy syncing engine. RPC syncing fallback. Support for all Alchemy supported blockchains. Efficient syncing from selectable block heights.",
-        icon: 'fa6-solid:arrows-rotate',
-      },
-      {
-        title: 'RAIRinfra',
-        description:
-          'RAIR is committed to fully open sourcing all aspects of our knowledge base. This includes: Terraform scripts, CI/CD pipeline, Kubernetes configurations. Deploy full MongoDB Cloud Atlas instances with a scalable offchain trade and execution engine.',
-        icon: 'fa6-solid:building',
-      },
-    ]}
-  />
-
-  <!-- Features Widget 2 *************** -->
-  <div class="relative py-16 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30">
-    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    <div class="relative">
-      <Features
-        id="features2"
-        tagline="Platform Components"
-        title=""
-        subtitle="Core Platform Features"
-        items={[
-          {
-            title: 'Frontend',
-            description:
-              'Modern, responsive UI components built with React and TypeScript. Customizable themes and layouts for seamless user experience.',
-            icon: 'fa6-solid:desktop',
-          },
-          {
-            title: 'Backend',
-            description:
-              'Scalable server architecture with robust API endpoints. Built with Node.js and Express for optimal performance and reliability.',
-            icon: 'fa6-solid:server',
-          },
-          {
-            title: 'Moderation',
-            description:
-              'Advanced content moderation tools with AI-powered filtering. Comprehensive admin dashboard for managing platform content.',
-            icon: 'fa6-solid:shield-halved',
-          },
-          {
-            title: 'Incentives',
-            description:
-              'Built-in reward system to encourage user engagement and content creation. Token-based incentives for platform participation.',
-            icon: 'fa6-solid:gift',
-          },
-        ]}
-      />
-    </div>
-  </div>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Clone our repo to earn rewards"
-    title="Innovative Licensing Model"
-    items={[
-      {
-        title: 'Apache2.0 Reimagined',
-        description:
-          'Adapting Apache2.0 for the Web3 Era. Token burn based licensing model',
-      },
-      {
-        title: 'NOTICE file NFTs',
-        description:
-          'Provenance inside NOTICE file in all derivative codebases proves a valid open source license exists onchain',
-      },
-      {
-        title: 'Fair Pricing',
-        description:
-          'Free for developers, graduated scale for enterprise based on % of ARR',
-      },
-    ]}
-    image={{
-      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Licensing-01%20(1).webp',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Licensing</h3>
-       A novel approach to open-source. Fully open with onchain license tracking 
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: '1,000,000,000 RAIR',
-        description: `Designed to reward active network development`,
-      },
-      {
-        title: 'Distribution',
-        description:
-          'Fund code audits, developer grants, CEX listings, strategic partnerships, all with eleganty designed lockup periods',
-      },
-      {
-        title: 'Emissions',
-        description:
-          "To balance the needs of early adopters and later participants through emissions curve release schedule",
-      },
-      {
-        title: 'Governance',
-        description:
-          'To foster longterm sustainable development',
-      },
-    ]}
-    image={{
-      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Tokenomics-02%20(1).webp',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Tokenomics</h3>
-    Stewards the RAIR open codebase into the future with a sustainable decentralized funding mechanism
-  </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Earn Network Rewards',
-        description: `Only wallets with valid License NFTs can receive rewards. Earn tokens for making our codebase better!`,
-      },
-      {
-        title: 'Submit New Features',
-        description:
-          'License holders can vote on new features. Fast track new enterprise development initiatives',
-      },
-      {
-        title: 'Submit Pull Requests',
-        description:
-          'DAO maintains the core codebase. Merges improvements and features from the community',
-      },
-      {
-        title: 'Vote on System Wide Changes',
-        description:
-          'Have a say in important matters development roadmap & financial',
-      },
-    ]}
-    image={{
-      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Rewards-03%20(1).webp',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Rewards</h3>
-    NFT license holders earn rewards and govern the project
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="How to license RAIR"
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Clone</span>',
-        description:
-          "Clone the rair-dapp Github repo to get your project started. Everything you'll need is in there just run docker",
-        icon: 'fa6-solid:box',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Apply</em>',
-        description:
-          "For an official open source NFT license from the RAIR DAO.",
-        icon: 'fa6-solid:font',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Commit</span>',
-        description:
-          'Update the NOTICE file in your Git repo with your official RAIR NFT',
-        icon: 'fa6-solid:paintbrush',
-      },
-      {
-        title: 'Contribute to development and receive RAIR tokens!',
-        icon: 'fa6-solid:check',
-      },
-    ]}
-    image={{
-      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-HowTo-04%20(1).webp',
-      alt: 'Steps image',
-    }}
-  />
-
   <!-- Integrations Widget ************** -->
 
   <Integrations
@@ -622,6 +386,242 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Integrations>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Bring Your Own Cloud"
+    title="What you get with RAIRprotocol"
+    subtitle="Complete Dapp Infrastructure"
+    items={[
+      {
+        title: 'RAIRsolidity',
+        description:
+          'Granular onchain NFT minting, royalty, resale, fungible token credit, and marketplace logic via ERC2535 upgradeable diamond multi-proxy contracts.',
+        icon: 'fa-brands:ethereum',
+      },
+      {
+        title: 'RAIRnode',
+        description:
+          'Backend to create your own modular API endpoints and offchain infrastructure. Configurable with 100+ environment variables for easily deployment.',
+        icon: 'fa6-solid:database',
+      },
+      {
+        title: 'RAIRfrontend',
+        description:
+          'Deploy customizable mobile first NFT marketplace frontends using modular REACT + Typescript framework. Easy whitelabel deployment via pre built UI/UX configurations. Full administrator dashboards.',
+        icon: 'fa6-solid:tablet',
+      },
+      {
+        title: 'RAIRstream',
+        description:
+          'DRM protect content with a full FFmpeg encoder/transcoder. Hashicorp Vault or database KMS credentials to create the ultimate secure DRM media systems.',
+        icon: 'fa6-solid:film',
+      },
+      {
+        title: 'RAIRsync',
+        description:
+          "Specify all smart contract addresses to sync via Alchemy syncing engine. RPC syncing fallback. Support for all Alchemy supported blockchains. Efficient syncing from selectable block heights.",
+        icon: 'fa6-solid:arrows-rotate',
+      },
+      {
+        title: 'RAIRinfra',
+        description:
+          'RAIR is committed to fully open sourcing all aspects of our knowledge base. This includes: Terraform scripts, CI/CD pipeline, Kubernetes configurations. Deploy full MongoDB Cloud Atlas instances with a scalable offchain trade and execution engine.',
+        icon: 'fa6-solid:building',
+      },
+    ]}
+  />
+
+  <!-- Features Widget 2 *************** -->
+  <div class="relative py-16 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30">
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="relative">
+      <Features
+        id="features2"
+        tagline="Platform Components"
+        title=""
+        subtitle="Core Platform Features"
+        items={[
+          {
+            title: 'Frontend',
+            description:
+              'Modern, responsive UI components built with React and TypeScript. Customizable themes and layouts for seamless user experience.',
+            icon: 'fa6-solid:desktop',
+          },
+          {
+            title: 'Backend',
+            description:
+              'Scalable server architecture with robust API endpoints. Built with Node.js and Express for optimal performance and reliability.',
+            icon: 'fa6-solid:server',
+          },
+          {
+            title: 'Moderation',
+            description:
+              'Advanced content moderation tools with AI-powered filtering. Comprehensive admin dashboard for managing platform content.',
+            icon: 'fa6-solid:shield-halved',
+          },
+          {
+            title: 'Incentives',
+            description:
+              'Built-in reward system to encourage user engagement and content creation. Token-based incentives for platform participation.',
+            icon: 'fa6-solid:gift',
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Clone our repo to earn rewards"
+    title="Innovative Licensing Model"
+    items={[
+      {
+        title: 'Apache2.0 Reimagined',
+        description:
+          'Adapting Apache2.0 for the Web3 Era. Token burn based licensing model',
+      },
+      {
+        title: 'NOTICE file NFTs',
+        description:
+          'Provenance inside NOTICE file in all derivative codebases proves a valid open source license exists onchain',
+      },
+      {
+        title: 'Fair Pricing',
+        description:
+          'Free for developers, graduated scale for enterprise based on % of ARR',
+      },
+    ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Licensing-01%20(1).webp',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Licensing</h3>
+       A novel approach to open-source. Fully open with onchain license tracking 
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '1,000,000,000 RAIR',
+        description: `Designed to reward active network development`,
+      },
+      {
+        title: 'Distribution',
+        description:
+          'Fund code audits, developer grants, CEX listings, strategic partnerships, all with eleganty designed lockup periods',
+      },
+      {
+        title: 'Emissions',
+        description:
+          "To balance the needs of early adopters and later participants through emissions curve release schedule",
+      },
+      {
+        title: 'Governance',
+        description:
+          'To foster longterm sustainable development',
+      },
+    ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Tokenomics-02%20(1).webp',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Tokenomics</h3>
+    Stewards the RAIR open codebase into the future with a sustainable decentralized funding mechanism
+  </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Earn Network Rewards',
+        description: `Only wallets with valid License NFTs can receive rewards. Earn tokens for making our codebase better!`,
+      },
+      {
+        title: 'Submit New Features',
+        description:
+          'License holders can vote on new features. Fast track new enterprise development initiatives',
+      },
+      {
+        title: 'Submit Pull Requests',
+        description:
+          'DAO maintains the core codebase. Merges improvements and features from the community',
+      },
+      {
+        title: 'Vote on System Wide Changes',
+        description:
+          'Have a say in important matters development roadmap & financial',
+      },
+    ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-Rewards-03%20(1).webp',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Rewards</h3>
+    NFT license holders earn rewards and govern the project
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How to license RAIR"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Clone</span>',
+        description:
+          "Clone the rair-dapp Github repo to get your project started. Everything you'll need is in there just run docker",
+        icon: 'fa6-solid:box',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Apply</em>',
+        description:
+          "For an official open source NFT license from the RAIR DAO.",
+        icon: 'fa6-solid:font',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Commit</span>',
+        description:
+          'Update the NOTICE file in your Git repo with your official RAIR NFT',
+        icon: 'fa6-solid:paintbrush',
+      },
+      {
+        title: 'Contribute to development and receive RAIR tokens!',
+        icon: 'fa6-solid:check',
+      },
+    ]}
+    image={{
+      src: 'https://raw.githubusercontent.com/rairprotocol/RAIRsite/main/src/assets/images/RAIR-HowTo-04%20(1).webp',
+      alt: 'Steps image',
+    }}
+  />
 
   <!-- HighlightedPosts Widget *******  commenting out the blog-->
 
