@@ -1,0 +1,142 @@
+<div id="interactive-background" class="fixed inset-0 -z-10 pointer-events-none">
+  <canvas id="bg-canvas" class="w-full h-full"></canvas>
+</div>
+
+<script>
+class Particle {
+  x: number;
+  y: number;
+  size: number;
+  baseX: number;
+  baseY: number;
+  density: number;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+    this.size = Math.random() * 2 + 1;
+    this.baseX = x;
+    this.baseY = y;
+    this.density = Math.random() * 30 + 1;
+  }
+
+  draw(ctx: CanvasRenderingContext2D) {
+    const isDark = document.documentElement.classList.contains('dark');
+    ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  update(mouse: { x: number | undefined; y: number | undefined; radius: number }) {
+    if (typeof mouse.x !== 'number' || typeof mouse.y !== 'number') return;
+
+    const dx = mouse.x - this.x;
+    const dy = mouse.y - this.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const forceDirectionX = dx / distance;
+    const forceDirectionY = dy / distance;
+    const maxDistance = mouse.radius;
+    const force = (maxDistance - distance) / maxDistance;
+    const directionX = forceDirectionX * force * this.density;
+    const directionY = forceDirectionY * force * this.density;
+
+    if (distance < mouse.radius) {
+      this.x -= directionX;
+      this.y -= directionY;
+    } else {
+      if (this.x !== this.baseX) {
+        const dx = this.x - this.baseX;
+        this.x -= dx / 10;
+      }
+      if (this.y !== this.baseY) {
+        const dy = this.y - this.baseY;
+        this.y -= dy / 10;
+      }
+    }
+  }
+}
+
+function initBackground() {
+  const canvas = document.getElementById('bg-canvas') as HTMLCanvasElement;
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const particles: Particle[] = [];
+  let animationFrameId: number;
+  const mouse = {
+    x: undefined as number | undefined,
+    y: undefined as number | undefined,
+    radius: 100
+  };
+
+  function handleResize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles();
+  }
+
+  function initParticles() {
+    particles.length = 0;
+    const numberOfParticles = (canvas.width * canvas.height) / 15000;
+    for (let i = 0; i < numberOfParticles; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      particles.push(new Particle(x, y));
+    }
+  }
+
+  function animate() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(particle => {
+      particle.update(mouse);
+      particle.draw(ctx);
+    });
+    animationFrameId = requestAnimationFrame(animate);
+  }
+
+  function handleMouseMove(e: MouseEvent) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }
+
+  function handleTouchMove(e: TouchEvent) {
+    e.preventDefault();
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+  }
+
+  function handleMouseLeave() {
+    mouse.x = undefined;
+    mouse.y = undefined;
+  }
+
+  // Event listeners
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('mousemove', handleMouseMove);
+  window.addEventListener('touchmove', handleTouchMove, { passive: false });
+  window.addEventListener('mouseleave', handleMouseLeave);
+  window.addEventListener('touchend', handleMouseLeave);
+
+  // Initialize
+  handleResize();
+  animate();
+
+  // Cleanup function
+  return () => {
+    window.removeEventListener('resize', handleResize);
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('touchmove', handleTouchMove);
+    window.removeEventListener('mouseleave', handleMouseLeave);
+    window.removeEventListener('touchend', handleMouseLeave);
+    cancelAnimationFrame(animationFrameId);
+  };
+}
+
+// Initialize when the component mounts
+document.addEventListener('astro:page-load', initBackground);
+</script> 

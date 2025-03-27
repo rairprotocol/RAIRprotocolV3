@@ -1,19 +1,27 @@
 <div class="nav-links">
-  <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">Home</a>
-  <a href="/about" class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">About</a>
-  <a href="/blog" class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">Blog</a>
-  <a href="/contact" class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors">Contact</a>
+  <a href="/" class="nav-link">Home</a>
+  <a href="/about" class="nav-link">About</a>
+  <a href="/blog" class="nav-link">Blog</a>
+  <a href="/contact" class="nav-link">Contact</a>
 </div>
 
 <style>
   .nav-links {
     @apply flex items-center space-x-8 rtl:space-x-reverse;
   }
+
+  .nav-link {
+    @apply text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors;
+  }
   
   /* Mobile styles */
   @media screen and (max-width: 768px) {
     .nav-links {
-      @apply flex-col space-y-4 space-x-0;
+      @apply flex-col items-start space-y-6 space-x-0;
+    }
+
+    .nav-link {
+      @apply text-base w-full py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800;
     }
   }
 </style> 
