@@ -70,11 +70,11 @@ const {
                 {item.envVars && item.envVars.length > 0 && (
                   <div>
                     <span class="font-medium">Env Vars:</span>
-                    <ul class="list-disc list-inside">
+                    <div class="mt-1 bg-gray-100 dark:bg-slate-700 rounded p-2 font-mono text-xs">
                       {item.envVars.map((envVar) => (
-                        <li>{envVar}</li>
+                        <div class="text-primary dark:text-primary-light">{envVar}</div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </div>
