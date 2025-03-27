@@ -1,5 +1,6 @@
 ---
 import LandingLayout from '~/layouts/LandingLayout.astro';
+import IconTest from '~/components/widgets/IconTest.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -11,6 +12,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Integrations from '~/components/widgets/Integrations.astro';
 
 const metadata = {
   title: 'RAIRprotocol enables the creation of scalable Dapps through an open token licensing model',
@@ -19,6 +21,9 @@ const metadata = {
 ---
 
 <LandingLayout metadata={metadata}>
+  <!-- Icon Test Component -->
+  <IconTest />
+
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -28,7 +33,7 @@ const metadata = {
         text: 'Source Code',
         href: 'https://github.com/rairprotocol',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'fa6-solid:download',
       },
       { text: 'Knowledge Base', href: 'https://docs.rairprotocol.org' },
     ]}
@@ -63,37 +68,37 @@ const metadata = {
         title: 'RAIRsolidity',
         description:
           'Granular onchain NFT minting, royalty, resale, fungible token credit, and marketplace logic via ERC2535 upgradeable diamond multi-proxy contracts.',
-        icon: 'tabler:currency-ethereum',
+        icon: 'fa6-brands:ethereum',
       },
       {
         title: 'RAIRnode',
         description:
           'Backend to create your own modular API endpoints and offchain infrastructure. Configurable with 100+ environment variables for easily deployment.',
-        icon: 'tabler:database-cog',
+        icon: 'fa6-solid:database',
       },
       {
         title: 'RAIRfrontend',
         description:
           'Deploy customizable mobile first NFT marketplace frontends using modular REACT + Typescript framework. Easy whitelabel deployment via pre built UI/UX configurations. Full administrator dashboards.',
-        icon: 'tabler:device-tablet',
+        icon: 'fa6-solid:tablet',
       },
       {
         title: 'RAIRstream',
         description:
           'DRM protect content with a full FFmpeg encoder/transcoder. Hashicorp Vault or database KMS credentials to create the ultimate secure DRM media systems.',
-        icon: 'tabler:badge-4k',
+        icon: 'fa6-solid:film',
       },
       {
         title: 'RAIRsync',
         description:
           "Specify all smart contract addresses to sync via Alchemy syncing engine. RPC syncing fallback. Support for all Alchemy supported blockchains. Efficient syncing from selectable block heights.",
-        icon: 'tabler:refresh',
+        icon: 'fa6-solid:arrows-rotate',
       },
       {
         title: 'RAIRinfra',
         description:
           'RAIR is committed to fully open sourcing all aspects of our knowledge base. This includes: Terraform scripts, CI/CD pipeline, Kubernetes configurations. Deploy full MongoDB Cloud Atlas instances with a scalable offchain trade and execution engine.',
-        icon: 'tabler:building-bridge',
+        icon: 'fa6-solid:building',
       },
     ]}
   />
@@ -112,25 +117,25 @@ const metadata = {
             title: 'Frontend',
             description:
               'Modern, responsive UI components built with React and TypeScript. Customizable themes and layouts for seamless user experience.',
-            icon: 'tabler:device-desktop',
+            icon: 'fa6-solid:desktop',
           },
           {
             title: 'Backend',
             description:
               'Scalable server architecture with robust API endpoints. Built with Node.js and Express for optimal performance and reliability.',
-            icon: 'tabler:server',
+            icon: 'fa6-solid:server',
           },
           {
             title: 'Moderation',
             description:
               'Advanced content moderation tools with AI-powered filtering. Comprehensive admin dashboard for managing platform content.',
-            icon: 'tabler:shield-check',
+            icon: 'fa6-solid:shield-halved',
           },
           {
             title: 'Incentives',
             description:
               'Built-in reward system to encourage user engagement and content creation. Token-based incentives for platform participation.',
-            icon: 'tabler:gift',
+            icon: 'fa6-solid:gift',
           },
         ]}
       />
@@ -262,23 +267,23 @@ const metadata = {
         title: 'Step 1: <span class="font-medium">Clone</span>',
         description:
           "Clone the rair-dapp Github repo to get your project started. Everything you'll need is in there just run docker",
-        icon: 'tabler:package',
+        icon: 'fa6-solid:box',
       },
       {
         title: 'Step 2: <span class="font-medium">Apply</em>',
         description:
           "For an official open source NFT license from the RAIR DAO.",
-        icon: 'tabler:letter-case',
+        icon: 'fa6-solid:font',
       },
       {
         title: 'Step 3: <span class="font-medium">Commit</span>',
         description:
           'Update the NOTICE file in your Git repo with your official RAIR NFT',
-        icon: 'tabler:paint',
+        icon: 'fa6-solid:paintbrush',
       },
       {
         title: 'Contribute to development and receive RAIR tokens!',
-        icon: 'tabler:check',
+        icon: 'fa6-solid:check',
       },
     ]}
     image={{
@@ -287,69 +292,340 @@ const metadata = {
     }}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Integrations Widget ************** -->
 
-  <Features2
+  <Integrations
     title="Ready for your API keys"
     subtitle="Critical Web3 infrastructure providers that have partnered with RAIRprotocol to provide out-of-the-box integration solutions"
     tagline="Integration Partners"
-    items={[
+    sections={[
       {
-        title: 'Alchemy Sync',
-        description: "Scalable syncing from supported EVM blockchains with one click",
-        icon: 'flat-color-icons:template',
+        title: "Blockchain Infrastructure",
+        description: "Essential blockchain connectivity and interaction technologies",
+        items: [
+          {
+            title: "Ethers.js",
+            description: "JavaScript library for Ethereum blockchain operations",
+            icon: 'fa6-brands:ethereum',
+            type: "Library",
+            importance: "Core technology for contract calls, transactions, and wallet integration",
+          },
+          {
+            title: "Alchemy SDK",
+            description: "Enhanced API access to multiple blockchain networks",
+            icon: 'fa6-solid:database',
+            type: "SDK",
+            importance: "Provides reliable RPC capabilities and advanced blockchain data access",
+            envVars: ["ALCHEMY_API_KEY"],
+          },
+          {
+            title: "Wagmi",
+            description: "React hooks library for Ethereum",
+            icon: 'fa6-solid:code',
+            type: "Hooks",
+            importance: "Simplifies blockchain state management in the frontend UI",
+          },
+          {
+            title: "Viem",
+            description: "TypeScript interface for Ethereum interactions",
+            icon: 'fa6-solid:code',
+            type: "Library",
+            importance: "Alternative to Ethers.js for blockchain operations",
+          },
+          {
+            title: "Web3Auth",
+            description: "Non-custodial wallet authentication",
+            icon: 'fa6-solid:lock',
+            type: "Auth",
+            importance: "Simplifies wallet onboarding with social logins",
+          },
+          {
+            title: "Account Abstraction",
+            description: "Advanced wallet features by Alchemy",
+            icon: 'fa6-solid:user',
+            type: "SDK",
+            importance: "Enables gasless transactions and smart contract wallets",
+            envVars: ["ALCHEMY_API_KEY"],
+          },
+        ],
       },
       {
-        title: 'Alchemy Account Kit',
-        description:
-          "Deploy AA ERC-4337 smart accounts for your users",
-        icon: 'flat-color-icons:gallery',
+        title: "Storage Solutions",
+        description: "Data storage across centralized and decentralized systems",
+        items: [
+          {
+            title: "MongoDB",
+            description: "Primary persistent data store",
+            icon: 'fa6-solid:database',
+            type: "Database",
+            importance: "Stores user data, NFT metadata, and application state",
+            envVars: ["MONGO_URI", "MONGO_URI_LOCAL", "MONGO_DB_HOSTNAME", "MONGO_DB_NAME"],
+          },
+          {
+            title: "Redis",
+            description: "In-memory data store",
+            icon: 'fa6-solid:database',
+            type: "Cache",
+            importance: "Handles session management and performance caching",
+            envVars: ["REDIS_HOST", "REDIS_PORT"],
+          },
+          {
+            title: "IPFS",
+            description: "Content-addressed storage",
+            icon: 'fa6-solid:cloud',
+            type: "Decentralized",
+            importance: "Stores NFT media and provides decentralized file access",
+            envVars: ["IPFS_SERVICE", "IPFS_GATEWAY", "IPFS_API"],
+          },
+          {
+            title: "Pinata",
+            description: "IPFS pinning service",
+            icon: 'fa6-solid:thumbtack',
+            type: "Service",
+            importance: "Ensures IPFS content availability and persistence",
+            envVars: ["PINATA_KEY", "PINATA_SECRET", "PINATA_GATEWAY"],
+          },
+          {
+            title: "GCP Storage",
+            description: "Google Cloud Storage",
+            icon: 'fa6-brands:google',
+            type: "Cloud",
+            importance: "Stores media files, backups, and centralized content",
+            envVars: ["GCP_PROJECT_ID", "GCP_IMAGE_BUCKET_NAME", "GCP_VIDEO_BUCKET_NAME", "GCP_GATEWAY", "GCP_CREDENTIALS"],
+          },
+          {
+            title: "AWS S3",
+            description: "Amazon S3 object storage",
+            icon: 'fa6-brands:aws',
+            type: "Cloud",
+            importance: "Alternative file storage and backup solution",
+            envVars: ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"],
+          },
+        ],
       },
       {
-        title: 'Web3Auth',
-        description:
-          'Store user AA access credentials securely via self-custodial MPC',
-        icon: 'flat-color-icons:approval',
+        title: "Backend Services",
+        description: "Server-side components and utilities",
+        items: [
+          {
+            title: "Express",
+            description: "Web server and API framework",
+            icon: 'fa6-solid:server',
+            type: "Framework",
+            importance: "Provides API endpoints, routing, and middleware infrastructure",
+          },
+          {
+            title: "Mongoose",
+            description: "MongoDB object modeling",
+            icon: 'fa6-solid:database',
+            type: "ODM",
+            importance: "Handles database schema, validation, and operations",
+          },
+          {
+            title: "Socket.IO",
+            description: "WebSocket communication",
+            icon: 'fa6-solid:plug',
+            type: "Realtime",
+            importance: "Enables live updates, notifications, and event handling",
+          },
+          {
+            title: "Agenda",
+            description: "Job scheduling for Node.js",
+            icon: 'fa6-solid:clock',
+            type: "Scheduler",
+            importance: "Manages background tasks and blockchain synchronization",
+            envVars: ["SYNC_CONTRACT_REPEAT_EVERY", "SYNC_CONTRACT_TASK_INTERVAL"],
+          },
+          {
+            title: "Winston",
+            description: "Structured logging utility",
+            icon: 'fa6-solid:file-lines',
+            type: "Logging",
+            importance: "Provides application logging and monitoring",
+            envVars: ["LOG_LEVEL", "MONGO_LOG_COLLECTION"],
+          },
+          {
+            title: "Swagger",
+            description: "API documentation",
+            icon: 'fa6-solid:file-code',
+            type: "Documentation",
+            importance: "Provides interactive API documentation",
+          },
+        ],
       },
       {
-        title: 'Yoti',
-        description:
-          "Build fully KYC/AML and age compliant workflows via AI recognition",
-        icon: 'flat-color-icons:document',
+        title: "Frontend Framework",
+        description: "User interface foundation",
+        items: [
+          {
+            title: "React",
+            description: "UI component library",
+            icon: 'fa6-brands:react',
+            type: "Framework",
+            importance: "Core frontend framework",
+          },
+          {
+            title: "Redux Toolkit",
+            description: "Global state management",
+            icon: 'fa6-solid:chart-line',
+            type: "State",
+            importance: "Manages application state and data flow",
+          },
+          {
+            title: "React Router",
+            description: "Client-side routing",
+            icon: 'fa6-solid:route',
+            type: "Navigation",
+            importance: "Handles page transitions and navigation",
+          },
+          {
+            title: "Vite",
+            description: "Development server and bundler",
+            icon: 'fa6-solid:bolt',
+            type: "Build",
+            importance: "Provides fast development and optimized builds",
+            envVars: ["VITE_*"],
+          },
+          {
+            title: "TypeScript",
+            description: "Typed JavaScript",
+            icon: 'fa6-solid:code',
+            type: "Language",
+            importance: "Ensures type safety and improved developer experience",
+          },
+          {
+            title: "MUI Material",
+            description: "React UI component library",
+            icon: 'fa6-solid:cubes',
+            type: "Components",
+            importance: "Offers pre-designed UI elements",
+          },
+        ],
       },
       {
-        title: 'Mongodb Cloud Atlas',
-        description:
-          'Deploy your own scalable database backends',
-        icon: 'flat-color-icons:advertising',
+        title: "Security & Authentication",
+        description: "Application protection and access control",
+        items: [
+          {
+            title: "JWT",
+            description: "JSON Web Token authentication",
+            icon: 'fa6-solid:key',
+            type: "Auth",
+            importance: "Secures API access with token-based auth",
+            envVars: ["JWT_SECRET"],
+          },
+          {
+            title: "Express Session",
+            description: "User session management",
+            icon: 'fa6-solid:user',
+            type: "Session",
+            importance: "Maintains persistent user sessions",
+            envVars: ["SESSION_SECRET", "SESSION_TTL"],
+          },
+          {
+            title: "Lusca",
+            description: "Web vulnerability protection",
+            icon: 'fa6-solid:shield',
+            type: "Security",
+            importance: "Guards against CSRF and XSS attacks",
+          },
+          {
+            title: "Rate Limit",
+            description: "Request throttling",
+            icon: 'fa6-solid:gauge',
+            type: "Middleware",
+            importance: "Prevents API abuse and DoS attacks",
+            envVars: ["RATE_LIMIT_MINUTE"],
+          },
+          {
+            title: "CORS",
+            description: "Cross-origin resource sharing",
+            icon: 'fa6-solid:globe',
+            type: "Middleware",
+            importance: "Controls cross-domain access to APIs",
+          },
+          {
+            title: "Connect-Redis",
+            description: "Redis session store",
+            icon: 'fa6-solid:database',
+            type: "Session",
+            importance: "Integrates Redis with Express sessions",
+          },
+        ],
       },
       {
-        title: 'Hashicorp Vault',
-        description: 'Store secret securely using industry best practice',
-        icon: 'flat-color-icons:currency-exchange',
+        title: "Monitoring & Analytics",
+        description: "Application health and user insights",
+        items: [
+          {
+            title: "Sentry",
+            description: "Error tracking",
+            icon: 'fa6-solid:triangle-exclamation',
+            type: "Monitoring",
+            importance: "Ensures application reliability and issue detection",
+            envVars: ["SENTRY_DSN", "VITE_SENTRY_ENABLED", "VITE_SENTRY_IO_ENDPOINT", "VITE_SENTRY_IO_TRACE_RATE", "VITE_SENTRY_RELEASE"],
+          },
+          {
+            title: "Google Analytics",
+            description: "Usage metrics",
+            icon: 'fa6-solid:chart-bar',
+            type: "Analytics",
+            importance: "Tracks user behavior and interactions",
+            envVars: ["VITE_GOOGLE_ANALYTICS", "VITE_GA_NAME"],
+          },
+          {
+            title: "React GA",
+            description: "Google Analytics for React",
+            icon: 'fa6-solid:chart-line',
+            type: "Analytics",
+            importance: "Integrates GA specifically with React",
+          },
+        ],
       },
       {
-        title: 'Filebase',
-        description: 'High quality low cost IPFS and IPNS pinning and bandwidth',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Terraform',
-        description:
-          'Cloud deployment infrastructure-as-code',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Coingecko',
-        description: "Onchain pricing and data feeds",
-        icon: 'flat-color-icons:database',
+        title: "Blockchain Networks",
+        description: "Supported blockchain networks in the system",
+        items: [
+          {
+            title: "Ethereum Mainnet",
+            description: "Production Ethereum network",
+            icon: 'fa6-brands:ethereum',
+            type: "Network",
+            importance: "Primary Ethereum blockchain environment",
+            envVars: ["ETHEREUM_MAINNET_RPC", "ETHEREUM_MAINNET_FACTORY_ADDRESS", "ETHEREUM_MAINNET_MINTER_ADDRESS"],
+          },
+          {
+            title: "Polygon/Matic Mainnet",
+            description: "Production Polygon network",
+            icon: 'fa6-solid:layer-group',
+            type: "Network",
+            importance: "Scalable production environment",
+            envVars: ["MATIC_MAINNET_RPC", "MATIC_MAINNET_FACTORY_ADDRESS", "MATIC_MAINNET_MINTER_ADDRESS"],
+          },
+          {
+            title: "Base",
+            description: "Production Base network",
+            icon: 'fa6-solid:circle-nodes',
+            type: "Network",
+            importance: "Ethereum L2 scaling solution",
+            envVars: ["BASE_MAINNET_RPC", "BASE_DIAMOND_FACTORY_ADDRESS", "BASE_DIAMOND_MARKETPLACE_ADDRESS"],
+          },
+          {
+            title: "Astar",
+            description: "Production Astar network",
+            icon: 'fa6-solid:star',
+            type: "Network",
+            importance: "Polkadot parachain integration",
+            envVars: ["ASTAR_MAINNET_RPC", "ASTAR_DIAMOND_FACTORY_ADDRESS", "ASTAR_DIAMOND_MARKETPLACE_ADDRESS"],
+          },
+        ],
       },
     ]}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Integrations>
 
   <!-- HighlightedPosts Widget *******  commenting out the blog-->
 
@@ -422,7 +698,7 @@ const metadata = {
         text: 'Apply',
         href: 'https://calendly.com/rairprotocol',
         target: '_blank',
-        icon: 'tabler:mail-filled',
+        icon: 'fa6-solid:envelope',
       },
     ]}
   >

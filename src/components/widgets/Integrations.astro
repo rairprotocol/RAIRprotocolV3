@@ -1,0 +1,87 @@
+---
+import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
+import Headline from "~/components/ui/Headline.astro";
+import { Icon } from "astro-icon/components";
+
+interface IntegrationSection {
+  title: string;
+  description: string;
+  items: Array<{
+    title: string;
+    description: string;
+    icon: string;
+    type: string;
+    importance: string;
+    envVars?: string[];
+  }>;
+}
+
+const {
+  title = await Astro.slots.render("title"),
+  subtitle = await Astro.slots.render("subtitle"),
+  tagline = await Astro.slots.render("tagline"),
+  sections = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props as {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  sections: IntegrationSection[];
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, any>;
+  bg?: any;
+};
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={classes?.headline}
+  />
+
+  <div class="space-y-12">
+    {sections.map((section) => (
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
+        <h3 class="text-2xl font-bold mb-4">{section.title}</h3>
+        <p class="text-muted mb-6">{section.description}</p>
+        
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {section.items.map((item) => (
+            <div class="bg-gray-50 dark:bg-slate-800 rounded-lg p-4">
+              <div class="flex items-center mb-3">
+                <Icon name={item.icon} class="w-8 h-8 text-primary mr-3" />
+                <h4 class="text-lg font-semibold">{item.title}</h4>
+              </div>
+              <p class="text-sm text-muted mb-3">{item.description}</p>
+              <div class="text-xs text-muted">
+                <div><span class="font-medium">Type:</span> {item.type}</div>
+                <div><span class="font-medium">Importance:</span> {item.importance}</div>
+                {item.envVars && item.envVars.length > 0 && (
+                  <div>
+                    <span class="font-medium">Env Vars:</span>
+                    <ul class="list-disc list-inside">
+                      {item.envVars.map((envVar) => (
+                        <li>{envVar}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper> 

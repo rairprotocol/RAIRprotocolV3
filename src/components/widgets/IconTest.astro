@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-2xl font-bold mb-4">Icon Format Test</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Test 1: Key icon in both formats -->
+    <div class="p-4 border rounded-lg">
+      <h3 class="font-semibold mb-2">Key Icon Test</h3>
+      <div class="flex items-center gap-4">
+        <div>
+          <p class="text-sm text-gray-600">FA6 Format:</p>
+          <Icon name="fa6-solid:key" class="w-6 h-6" />
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">Standard Format:</p>
+          <Icon name="fa-solid:key" class="w-6 h-6" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 2: Database icon in both formats -->
+    <div class="p-4 border rounded-lg">
+      <h3 class="font-semibold mb-2">Database Icon Test</h3>
+      <div class="flex items-center gap-4">
+        <div>
+          <p class="text-sm text-gray-600">FA6 Format:</p>
+          <Icon name="fa6-solid:database" class="w-6 h-6" />
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">Standard Format:</p>
+          <Icon name="fa-solid:database" class="w-6 h-6" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 3: Brand icon (Ethereum) in both formats -->
+    <div class="p-4 border rounded-lg">
+      <h3 class="font-semibold mb-2">Ethereum Icon Test</h3>
+      <div class="flex items-center gap-4">
+        <div>
+          <p class="text-sm text-gray-600">FA6 Format:</p>
+          <Icon name="fa6-brands:ethereum" class="w-6 h-6" />
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">Standard Format:</p>
+          <Icon name="fa-brands:ethereum" class="w-6 h-6" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
