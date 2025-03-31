@@ -1,0 +1,67 @@
+---
+import LandingLayout from '~/layouts/LandingLayout.astro';
+
+const metadata = {
+  title: 'RAIR Devco - Enterprise Web3 Development Company',
+  ignoreTitleTemplate: true,
+};
+---
+
+<LandingLayout metadata={metadata}>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">RAIR Devco</h1>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">Enterprise Web3 Development Company</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">About Us</h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            RAIR Devco is a leading enterprise Web3 development company specializing in creating scalable blockchain solutions. 
+            We help businesses transition into the Web3 space with custom development, consulting, and implementation services.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Services</h2>
+          <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+            <li class="flex items-center">
+              <i class="fa6-solid:check text-green-500 mr-2"></i>
+              Custom Smart Contract Development
+            </li>
+            <li class="flex items-center">
+              <i class="fa6-solid:check text-green-500 mr-2"></i>
+              Web3 Integration Services
+            </li>
+            <li class="flex items-center">
+              <i class="fa6-solid:check text-green-500 mr-2"></i>
+              Blockchain Consulting
+            </li>
+            <li class="flex items-center">
+              <i class="fa6-solid:check text-green-500 mr-2"></i>
+              Enterprise DApp Development
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Contact</h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Interested in working with us? Contact us at:
+            <a href="mailto:contact@rair.dev" class="text-blue-600 dark:text-blue-400 hover:underline">contact@rair.dev</a>
+          </p>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Mission</h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            To empower businesses with cutting-edge Web3 technology solutions, making blockchain adoption seamless and efficient 
+            for enterprises of all sizes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</LandingLayout> 

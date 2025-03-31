@@ -1,5 +1,6 @@
 ---
 import LandingLayout from '~/layouts/LandingLayout.astro';
+import SelectionModal from '~/components/widgets/SelectionModal.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -20,6 +21,7 @@ const metadata = {
 ---
 
 <LandingLayout metadata={metadata}>
+  <SelectionModal />
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -439,38 +441,113 @@ const metadata = {
   <div class="relative py-16 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30">
     <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     <div class="relative">
-      <Features
-        id="features2"
-        tagline="Platform Components"
-        title=""
-        subtitle="Core Platform Features"
-        items={[
-          {
-            title: 'Frontend',
-            description:
-              'Modern, responsive UI components built with React and TypeScript. Customizable themes and layouts for seamless user experience.',
-            icon: 'fa6-solid:desktop',
-          },
-          {
-            title: 'Backend',
-            description:
-              'Scalable server architecture with robust API endpoints. Built with Node.js and Express for optimal performance and reliability.',
-            icon: 'fa6-solid:server',
-          },
-          {
-            title: 'Moderation',
-            description:
-              'Advanced content moderation tools with AI-powered filtering. Comprehensive admin dashboard for managing platform content.',
-            icon: 'fa6-solid:shield-halved',
-          },
-          {
-            title: 'Incentives',
-            description:
-              'Built-in reward system to encourage user engagement and content creation. Token-based incentives for platform participation.',
-            icon: 'fa6-solid:gift',
-          },
-        ]}
-      />
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Platform Components</h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Core Platform Features</p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-8 relative">
+          <!-- Connection Arrows -->
+          <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1">
+            <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <!-- Forward Arrow -->
+              <path
+                d="M 10,10 C 30,10 40,0 50,0 C 60,0 70,10 90,10"
+                fill="none"
+                stroke="url(#gradient1)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M 85,7 L 90,10 L 85,13"
+                fill="none"
+                stroke="url(#gradient1)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <!-- Backward Arrow -->
+              <path
+                d="M 90,10 C 70,10 60,20 50,20 C 40,20 30,10 10,10"
+                fill="none"
+                stroke="url(#gradient2)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M 15,7 L 10,10 L 15,13"
+                fill="none"
+                stroke="url(#gradient2)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <!-- Gradients -->
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#A855F7;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="0%">
+                  <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- RAIRprotocol Frame -->
+          <div class="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 relative z-10">
+            <div class="flex items-center mb-4">
+              <i class="fa6-solid:building text-2xl text-blue-600 dark:text-blue-400 mr-2"></i>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">RAIRprotocol</h3>
+            </div>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <i class="fa6-solid:desktop text-xl text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                <div>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white">Frontend</h4>
+                  <p class="mt-1 text-gray-600 dark:text-gray-400">Modern, responsive UI components built with React and TypeScript. Customizable themes and layouts for seamless user experience.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fa6-solid:server text-xl text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                <div>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white">Backend</h4>
+                  <p class="mt-1 text-gray-600 dark:text-gray-400">Scalable server architecture with robust API endpoints. Built with Node.js and Express for optimal performance and reliability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevDapp Frame -->
+          <div class="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 relative z-10">
+            <div class="flex items-center mb-4">
+              <i class="fa6-solid:code text-2xl text-purple-600 dark:text-purple-400 mr-2"></i>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">DevDapp</h3>
+            </div>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <i class="fa6-solid:shield-halved text-xl text-purple-600 dark:text-purple-400 mt-1 mr-3"></i>
+                <div>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white">Moderation</h4>
+                  <p class="mt-1 text-gray-600 dark:text-gray-400">Advanced content moderation tools with AI-powered filtering. Comprehensive admin dashboard for managing platform content.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fa6-solid:gift text-xl text-purple-600 dark:text-purple-400 mt-1 mr-3"></i>
+                <div>
+                  <h4 class="text-lg font-medium text-gray-900 dark:text-white">Incentives</h4>
+                  <p class="mt-1 text-gray-600 dark:text-gray-400">Built-in reward system to encourage user engagement and content creation. Token-based incentives for platform participation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

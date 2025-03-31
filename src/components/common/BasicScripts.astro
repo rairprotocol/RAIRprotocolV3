@@ -3,13 +3,19 @@ import { UI } from '~/utils/config';
 ---
 
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
+  // Debug flag
+  window.debug = true;
+
+  // Ensure script only runs once
   if (window.basic_script) {
+    console.log('Script already initialized');
     return;
   }
 
   window.basic_script = true;
 
   function applyTheme(theme) {
+    if (window.debug) console.log('Applying theme:', theme);
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -18,6 +24,7 @@ import { UI } from '~/utils/config';
   }
 
   const initTheme = function () {
+    if (window.debug) console.log('Initializing theme');
     if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
       applyTheme(defaultTheme.replace(':only', ''));
     } else if (
@@ -29,20 +36,55 @@ import { UI } from '~/utils/config';
       applyTheme('light');
     }
   };
-  initTheme();
 
   function attachEvent(selector, event, fn) {
+    if (window.debug) console.log('Attaching event:', event, 'to:', selector);
     const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
     if (matches && matches.length) {
       matches.forEach((elem) => {
         elem.addEventListener(event, (e) => fn(e, elem), false);
       });
+    } else {
+      console.warn('No elements found for selector:', selector);
     }
   }
 
   const onLoad = function () {
+    if (window.debug) console.log('Page loaded, initializing components');
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
+
+    // Initialize header
+    const header = document.getElementById('header');
+    if (header) {
+      if (window.debug) console.log('Header found');
+      header.style.display = 'block';
+      header.style.visibility = 'visible';
+    } else {
+      console.warn('Header element not found');
+    }
+
+    // Initialize navigation
+    const nav = document.querySelector('nav');
+    if (nav) {
+      if (window.debug) console.log('Navigation found');
+      nav.style.display = 'block';
+      nav.style.visibility = 'visible';
+    } else {
+      console.warn('Navigation element not found');
+    }
+
+    // Initialize theme toggle
+    const themeToggles = document.querySelectorAll('[data-aw-toggle-color-scheme]');
+    if (themeToggles.length) {
+      if (window.debug) console.log('Theme toggles found:', themeToggles.length);
+      themeToggles.forEach(toggle => {
+        toggle.style.display = 'block';
+        toggle.style.visibility = 'visible';
+      });
+    } else {
+      console.warn('No theme toggles found');
+    }
 
     attachEvent('#header nav', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
@@ -112,18 +154,20 @@ import { UI } from '~/utils/config';
 
     function appyHeaderStylesOnScroll() {
       const header = document.querySelector('#header[data-aw-sticky-header]');
-      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
-        document.getElementById('header').classList.add('scroll');
-      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
-        document.getElementById('header').classList.remove('scroll');
+      if (header) {
+        if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+          header.classList.add('scroll');
+        } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+          header.classList.remove('scroll');
+        }
       }
       ticking = false;
     }
+
     appyHeaderStylesOnScroll();
 
     attachEvent([document], 'scroll', function () {
       lastKnownScrollPosition = window.scrollY;
-
       if (!ticking) {
         window.requestAnimationFrame(() => {
           appyHeaderStylesOnScroll();
@@ -132,7 +176,9 @@ import { UI } from '~/utils/config';
       }
     });
   };
+
   const onPageShow = function () {
+    if (window.debug) console.log('Page shown, reinitializing components');
     document.documentElement.classList.add('motion-safe:scroll-smooth');
     const elem = document.querySelector('[data-aw-toggle-menu]');
     if (elem) {
@@ -142,10 +188,16 @@ import { UI } from '~/utils/config';
     document.getElementById('mobile-menu-container')?.classList.remove('expanded');
   };
 
-  window.onload = onLoad;
-  window.onpageshow = onPageShow;
+  // Initialize theme immediately
+  initTheme();
 
+  // Set up event listeners
+  window.addEventListener('load', onLoad);
+  window.addEventListener('pageshow', onPageShow);
+
+  // Handle Astro view transitions
   document.addEventListener('astro:after-swap', () => {
+    if (window.debug) console.log('Astro view transition detected');
     initTheme();
     onLoad();
     onPageShow();
