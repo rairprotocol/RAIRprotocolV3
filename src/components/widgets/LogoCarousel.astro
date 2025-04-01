@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+
+// Placeholder logos - repeat the same logo for now
+const logos = Array(15).fill({
+  src: 'https://www.gstatic.com/android/market_images/web/play_prism_hlock_xxl.png', // Google Play logo URL
+  alt: 'Google Play logo placeholder',
+});
+---
+
+<div class="py-12 md:py-16 bg-gray-50 dark:bg-slate-900 overflow-hidden">
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+    <h3 class="text-center text-lg font-semibold text-gray-600 dark:text-slate-400 mb-8">
+      Integrated With Leading Platforms
+    </h3>
+    <div
+      class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+    >
+      <ul
+        class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+      >
+        {
+          logos.map((logo) => (
+            <li class="flex-shrink-0">
+              <img src={logo.src} alt={logo.alt} class="h-10 w-auto" loading="lazy" decoding="async" />
+            </li>
+          ))
+        }
+      </ul>
+      {/* Duplicate the list for seamless scrolling effect */}
+      <ul
+        class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+        aria-hidden="true"
+      >
+        {
+          logos.map((logo) => (
+            <li class="flex-shrink-0">
+              <img src={logo.src} alt={logo.alt} class="h-10 w-auto" loading="lazy" decoding="async" />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+  }
+</style> 
