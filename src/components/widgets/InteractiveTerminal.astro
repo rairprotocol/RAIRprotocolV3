@@ -1,0 +1,124 @@
+---
+const commonCommands = {
+  help: `Available commands:
+  - help: Show this help message
+  - about: Learn about RAIR Protocol
+  - connect: Connect your wallet
+  - balance: Check your token balance
+  - version: Show protocol version`,
+  about: "RAIR Protocol is a decentralized protocol for managing digital assets and rights.",
+  version: "RAIR Protocol v2.0.0",
+  connect: "Please connect your wallet using the button in the navigation bar.",
+  balance: "Please connect your wallet first to check your balance."
+};
+---
+
+<div class="terminal-container bg-gray-900 rounded-lg p-4 font-mono text-sm">
+  <div class="terminal-header flex justify-between items-center mb-2">
+    <div class="flex space-x-2">
+      <div class="w-3 h-3 rounded-full bg-red-500"></div>
+      <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+      <div class="w-3 h-3 rounded-full bg-green-500"></div>
+    </div>
+    <div class="text-gray-400 text-xs">rair-terminal</div>
+  </div>
+  <div class="terminal-content text-white">
+    <div class="terminal-welcome mb-2">
+      Welcome to RAIR Protocol Terminal. Type 'help' to see available commands.
+    </div>
+    <div class="command-history"></div>
+    <div class="command-line flex">
+      <span class="text-green-400 mr-2">$</span>
+      <div class="command-input flex-grow" contenteditable="true" spellcheck="false"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const commandHistory = document.querySelector('.command-history');
+  const commandInput = document.querySelector('.command-input');
+  const commonCommands = {
+    help: `Available commands:
+  - help: Show this help message
+  - about: Learn about RAIR Protocol
+  - connect: Connect your wallet
+  - balance: Check your token balance
+  - version: Show protocol version`,
+    about: "RAIR Protocol is a decentralized protocol for managing digital assets and rights.",
+    version: "RAIR Protocol v2.0.0",
+    connect: "Please connect your wallet using the button in the navigation bar.",
+    balance: "Please connect your wallet first to check your balance."
+  };
+
+  function appendToHistory(command: string, response: string) {
+    if (!commandHistory) return;
+
+    const entry = document.createElement('div');
+    entry.className = 'mb-2';
+    
+    const commandLine = document.createElement('div');
+    commandLine.className = 'flex';
+    commandLine.innerHTML = `<span class="text-green-400 mr-2">$</span><span>${command}</span>`;
+    
+    const responseLine = document.createElement('div');
+    responseLine.className = 'text-gray-300 ml-4';
+    responseLine.textContent = response;
+    
+    entry.appendChild(commandLine);
+    entry.appendChild(responseLine);
+    commandHistory.appendChild(entry);
+  }
+
+  function processCommand(command: string): string {
+    const cmd = command.toLowerCase().trim();
+    return commonCommands[cmd] || `Command not found: ${command}. Type 'help' for available commands.`;
+  }
+
+  commandInput?.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const command = (e.target as HTMLElement).textContent?.trim() || '';
+      if (!command) return;
+
+      const response = processCommand(command);
+      appendToHistory(command, response);
+
+      if (e.target instanceof HTMLElement) {
+        e.target.textContent = '';
+      }
+
+      // Scroll to bottom
+      const container = document.querySelector('.terminal-container');
+      if (container) {
+        container.scrollTop = container.scrollHeight;
+      }
+    }
+  });
+</script>
+
+<style>
+  .terminal-container {
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .command-input:focus {
+    outline: none;
+  }
+
+  .command-history {
+    white-space: pre-wrap;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .terminal-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .terminal-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+</style> 
